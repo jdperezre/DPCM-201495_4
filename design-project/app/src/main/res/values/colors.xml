@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    Logo-->
+    <color name="colorLogoLeft">#FAE072</color>
+    <color name="colorLogoRight">#FCCD00</color>
+        <color name="colorLogoShadow">#FEA41D</color>
+<!--    Text-->
+    <color name="colorTextPrimary">#FFFFFF</color>
+    <color name="colorTextSecondary">#000000</color>
+<!--    Button-->
+    <color name="colorButtonPrimary">#FEA41D</color>
+    <color name="colorButtonSecondary">#29404E</color>
+    <color name="colorButtonTertiary">#FCCD00</color>
+<!--    Background-->
+    <color name="colorBackground">#102733</color>
+
+</resources>
