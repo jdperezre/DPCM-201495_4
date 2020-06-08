@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/edit_event"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".MainActivity">
+
+    <!--    Header -->
+    <LinearLayout
+        android:id="@+id/header_with_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <include layout="@layout/header_simple" />
+    </LinearLayout>
+
+    <!--    Content -->
+
+    <!--    Footer -->
+
+    <LinearLayout
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/footer"
+        android:layout_marginBottom="51dp"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarAlwaysDrawVerticalTrack="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp">
+
+
+                <ImageView
+                    android:id="@+id/edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="120dp"
+                    android:src="@drawable/imagen_51" />
+
+                <EditText
+                    android:id="@+id/EditTextTitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorTextPrimary"
+                    android:hint="Partido copa libertadores"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextPrimary"></EditText>
+
+                <EditText
+                    android:id="@+id/EditTextDescription"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorTextPrimary"
+                    android:hint="Ya está a la venta la boletería para la ida de la tercera fase de la Conmebol Libertadores…"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextPrimary"></EditText>
+
+                <EditText
+                    android:id="@+id/EditTextFecha"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorTextPrimary"
+                    android:hint="12/01/2021"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextPrimary"></EditText>
+
+                <EditText
+                    android:id="@+id/EditTextHr"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorTextPrimary"
+                    android:hint="18:45"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextPrimary"></EditText>
+
+                <EditText
+                    android:id="@+id/EditTextPlace"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorTextPrimary"
+                    android:hint="Estadio Atanasio Girard…"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextPrimary"></EditText>
+
+                <EditText
+                    android:id="@+id/EditTextContact"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorTextPrimary"
+                    android:hint="Atlético Independiente …"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextPrimary"></EditText>
+
+                <EditText
+                    android:id="@+id/EditTextTel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorTextPrimary"
+                    android:hint="3013003030"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextPrimary"></EditText>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|top"
+                    android:layout_margin="24dp"
+                    android:background="@color/colorButtonPrimary"
+                    android:fontFamily="@font/muli_bold"
+                    android:padding="5dp"
+                    android:text=" ACTUALIZAR "
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFA726"
+        android:orientation="vertical">
+    </LinearLayout>
+
+</RelativeLayout>
+

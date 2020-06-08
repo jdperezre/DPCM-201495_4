@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".MainActivity">
+
+    <!--    Header -->
+    <LinearLayout
+        android:id="@+id/header_dash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+        <include layout="@layout/header" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/muli_black"
+            android:layout_marginLeft="24dp"
+            android:text="@string/greeting"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <!--    Content -->
+
+
+    <!--    Footer -->
+
+    <LinearLayout
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="498dp"
+        android:layout_above="@+id/footer"
+        android:layout_marginBottom="7dp"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarAlwaysDrawVerticalTrack="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/muli_bold"
+                    android:text="@string/subtitle"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="16dp" />
+
+                <TableLayout
+                    android:layout_width="371dp"
+                    android:layout_height="wrap_content"
+                    android:collapseColumns="3"
+                    android:padding="4dp">
+
+                    <TableRow
+                        android:id="@+id/row1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|top"
+                            android:layout_marginLeft="4dp"
+                            android:background="@drawable/rectangule"
+                            android:drawableTop="@drawable/mic_white_18dp"
+                            android:fontFamily="@font/muli_bold"
+                            android:padding="15dp"
+                            android:text=" Conciertos "
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="16dp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|top"
+                            android:layout_marginLeft="4dp"
+                            android:background="@drawable/rectangule"
+                            android:drawableTop="@drawable/sports_tennis_white_18dp"
+                            android:fontFamily="@font/muli_bold"
+                            android:padding="15dp"
+                            android:text=" Deportes "
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="16dp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal|top"
+                            android:layout_marginLeft="2dp"
+                            android:background="@drawable/rectangule"
+                            android:drawableTop="@drawable/palette_white_18dp"
+                            android:fontFamily="@font/muli_bold"
+                            android:padding="15dp"
+                            android:text=" Artes "
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="16dp" />
+                    </TableRow>
+                </TableLayout>
+
+                <Space
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"/>
+
+                <!--Todos los eventos-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/muli_bold"
+                    android:text="@string/title_all_events"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="16dp" />
+
+                <!--    Lista -->
+                <LinearLayout
+                    android:id="@+id/list_events"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/list_events" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFA726"
+        android:orientation="vertical">
+        <include
+            layout="@layout/footer"
+            android:layout_width="match_parent"
+            android:layout_height="96dp" />
+    </LinearLayout>
+
+</RelativeLayout>
+

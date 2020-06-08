@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/footer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@color/colorBackground"
+    android:gravity="center">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:collapseColumns="3"
+        android:padding="20dp">
+
+        <TableRow
+            android:id="@+id/row1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/shape"
+                android:drawableStart="@drawable/noun_home_2082119"
+                android:fontFamily="@font/muli_bold"
+                android:padding="15dp"
+                android:text=" Inicio "
+                android:textAllCaps="false"
+                android:textColor="@color/colorButtonPrimary"
+                android:textSize="16sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/shape"
+                android:drawableStart="@drawable/noun_search_2738108"
+                android:fontFamily="@font/muli_bold"
+                android:padding="15dp"
+                android:text=" Alertas "
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/shape"
+                android:drawableStart="@drawable/noun_star_1683883"
+                android:fontFamily="@font/muli_bold"
+                android:padding="15dp"
+                android:text=" Favoritos "
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

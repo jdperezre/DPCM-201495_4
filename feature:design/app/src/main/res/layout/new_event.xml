@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/edit_event"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".MainActivity">
+
+    <!--    Header -->
+    <LinearLayout
+        android:id="@+id/header_with_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <include layout="@layout/header_simple" />
+    </LinearLayout>
+
+    <!--    Content -->
+
+    <!--    Footer -->
+    <LinearLayout
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/footer"
+        android:layout_marginBottom="64dp"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarAlwaysDrawVerticalTrack="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="120dp"
+                    android:src="@drawable/add_photo_alternate_white_18dp" />
+
+                <EditText
+                    android:id="@+id/EditTextTitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorTextPrimary"
+                    android:hint="Título"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextPrimary"></EditText>
+
+                <EditText
+                    android:id="@+id/EditTextDescription"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorTextPrimary"
+                    android:hint="Descripción"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextPrimary"></EditText>
+
+                <EditText
+                    android:id="@+id/EditTextFecha"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorTextPrimary"
+                    android:hint="Fecha"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextPrimary"></EditText>
+
+                <EditText
+                    android:id="@+id/EditTextHr"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorTextPrimary"
+                    android:hint="Hora"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextPrimary"></EditText>
+
+                <EditText
+                    android:id="@+id/EditTextPlace"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorTextPrimary"
+                    android:hint="Lugar"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextPrimary"></EditText>
+
+                <EditText
+                    android:id="@+id/EditTextContact"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorTextPrimary"
+                    android:hint="Contacto"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextPrimary"></EditText>
+
+                <EditText
+                    android:id="@+id/EditTextTel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorTextPrimary"
+                    android:hint="Teléfono contacto"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextPrimary"></EditText>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|top"
+                    android:layout_margin="24dp"
+                    android:background="@color/colorButtonPrimary"
+                    android:fontFamily="@font/muli_bold"
+                    android:padding="5dp"
+                    android:text=" GUARDAR "
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFA726"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+</RelativeLayout>
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".MainActivity">
+
+<!--    Header -->
+    <LinearLayout
+        android:id="@+id/header_with_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+        <include layout="@layout/header_with_add" />
+    </LinearLayout>
+
+<!--    Content -->
+
+    <LinearLayout
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="498dp"
+        android:layout_above="@+id/footer"
+        android:layout_marginBottom="37dp"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarAlwaysDrawVerticalTrack="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp">
+
+                <Space
+                    android:layout_width="1dp"
+                    android:layout_height="15dp" />
+
+                <!--Todos los eventos-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/muli_bold"
+                    android:text="@string/title_events"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="16dp" />
+
+                <LinearLayout
+                    android:id="@+id/list_events"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/list_events" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+<!--    Footer -->
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFA726"
+        android:orientation="vertical">
+        <include
+            layout="@layout/footer"
+            android:layout_width="match_parent"
+            android:layout_height="96dp" />
+    </LinearLayout>
+
+</RelativeLayout>
+

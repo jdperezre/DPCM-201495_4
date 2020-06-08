@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">events-view</string>
+    <string name="title_all_events">Eventos populares</string>
+    <string name="title_events">Todos los eventos</string>
+    <string name="greeting">Hola, Usuario!</string>
+    <string name="subtitle">Todas las categorías</string>
+    <string name="new_event">Nuevo evento</string>
+</resources>

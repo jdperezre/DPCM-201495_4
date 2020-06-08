@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header_dash"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="false"
+    android:background="@color/colorBackground"
+    android:gravity="center_horizontal">
+
+
+    <TableLayout
+        android:id="@+id/header_with_add"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:collapseColumns="5"
+        android:padding="30dp">
+
+        <TableRow
+            android:id="@+id/row1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_margin="3dp"
+                android:src="@drawable/arrow_back_ios_24px" />
+
+            <Space
+                android:layout_width="1dp"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:fontFamily="@font/muli_black"
+                android:text="CULTUR"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:fontFamily="@font/muli_black"
+                android:text="APP"
+                android:textColor="@color/colorLogoRight"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="160dp"
+                android:src="@drawable/add_white_18dp" />
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>

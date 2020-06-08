@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_events"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:collapseColumns="2"
+        android:padding="6dp">
+
+        <TableRow
+            android:id="@+id/row0"
+            android:layout_width="204dp"
+            android:layout_height="match_parent"
+            android:background="#283F4D">
+
+            <ImageView
+                android:layout_width="107dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:padding="5dp"
+                android:src="@drawable/imagen_51" />
+
+            <TableLayout
+                android:layout_width="281dp"
+                android:layout_height="match_parent"
+                android:background="#283F4D"
+                android:collapseColumns="2"
+                android:padding="15dp">
+
+                <TableRow
+                    android:id="@+id/row1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_margin="3dp"
+                        android:drawableLeft="@drawable/more_vert_white_18dp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row2"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_margin="3dp"
+                        android:fontFamily="@font/muli_bold"
+                        android:text="Partido Copa Libertadores"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="16dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row3"
+                    android:layout_width="204dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_margin="3dp"
+                        android:fontFamily="@font/muli_bold"
+                        android:text="Ene 12, 2021"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="11dp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row4"
+                    android:layout_width="204dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_margin="3dp"
+                        android:fontFamily="@font/muli_bold"
+                        android:text="Estadio Atanasio Girardot"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="11dp" />
+                </TableRow>
+            </TableLayout>
+        </TableRow>
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="15dp" />
+
+        <!--        Fila Arte   -->
+        <TableRow
+            android:id="@+id/row5"
+            android:layout_width="204dp"
+            android:layout_height="match_parent"
+            android:background="#283F4D">
+
+            <ImageView
+                android:layout_width="94dp"
+                android:layout_height="105dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:padding="5dp"
+                android:src="@drawable/imagen_49" />
+
+            <TableLayout
+                android:layout_width="254dp"
+                android:layout_height="wrap_content"
+                android:background="#283F4D"
+                android:collapseColumns="2"
+                android:padding="15dp">
+
+                <TableRow
+                    android:id="@+id/row6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_margin="3dp"
+                        android:drawableLeft="@drawable/more_vert_white_18dp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row7"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_margin="3dp"
+                        android:fontFamily="@font/muli_bold"
+                        android:text="Arte y charla sobre nuevas.."
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="16dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row8"
+                    android:layout_width="204dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_margin="3dp"
+                        android:fontFamily="@font/muli_bold"
+                        android:text="Ene 12, 2021"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="11dp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row9"
+                    android:layout_width="204dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_margin="3dp"
+                        android:fontFamily="@font/muli_bold"
+                        android:text="Museo de Arte Moderno, Ciudad del Rio"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="11dp" />
+                </TableRow>
+            </TableLayout>
+        </TableRow>
+
+    </TableLayout>
+</RelativeLayout>
