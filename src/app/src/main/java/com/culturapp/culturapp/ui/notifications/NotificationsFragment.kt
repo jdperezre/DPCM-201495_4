@@ -23,6 +23,7 @@ class NotificationsFragment : Fragment() {
     override fun onResume() {
         customEditText.setHint(R.string.hint_custom_edittext);
         customEditText.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.ic_home_black_24dp,0)
+        customEditText.drawable
         super.onResume()
     }
 }
