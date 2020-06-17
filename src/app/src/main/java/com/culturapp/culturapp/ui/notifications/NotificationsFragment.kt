@@ -1,6 +1,7 @@
 package com.culturapp.culturapp.ui.notifications
 
 import android.os.Bundle
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,9 +22,9 @@ class NotificationsFragment : Fragment() {
     }
 
     override fun onResume() {
-        customEditText.setHint(R.string.hint_custom_edittext);
-        customEditText.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.ic_home_black_24dp,0)
-        customEditText.drawable
+        nameEditText.SetInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_NORMAL)
+        nameEditText.SetHint(R.string.hint_custom_edittext);
+        nameEditText.SetIcon(R.drawable.ic_home_black_24dp)
         super.onResume()
     }
 }

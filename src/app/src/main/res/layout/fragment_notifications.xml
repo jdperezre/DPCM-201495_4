@@ -6,23 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.notifications.NotificationsFragment">
 
-    <EditText
-        android:id="@+id/customEditText"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:background="@drawable/rounded_edittext"
-        android:ems="10"
-        android:fontFamily="@font/roboto"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:labelFor="@id/customEditText"
-        android:padding="7dp"
-        android:textColor="#000000"
-        android:textColorHint="#D5D5D5"
-        android:typeface="normal"
-        android:textSize="24dp"
+    <com.culturapp.culturapp.controls.CustomEditText
+        android:id="@+id/nameEditText"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

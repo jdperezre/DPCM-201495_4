@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText android:id="@+id/customEditText"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:fontFamily="@font/roboto"
+        android:importantForAutofill="no"
+        android:labelFor="@id/customEditText"
+        android:padding="7dp"
+        android:textColor="#000000"
+        android:textColorHint="#D5D5D5"
+        android:typeface="normal"
+        android:textSize="24dp"
+        xmlns:android="http://schemas.android.com/apk/res/android" />
+</merge>
