@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.culturapp.culturapp.R
+import com.culturapp.culturapp.adapters.EventListAdapter
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
@@ -19,4 +21,28 @@ class HomeFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
+
+    override fun onResume() {
+        super.onResume()
+        var adapter = EventListAdapter(this.requireActivity(), generateData())
+
+        events_listView?.adapter = adapter
+        adapter?.notifyDataSetChanged()
+    }
+
+    fun generateData(): ArrayList<UserDto> {
+        var result = ArrayList<UserDto>()
+
+        for (i in 0..9) {
+            var user: UserDto = UserDto((i + 1).toString() + " Bett", "Awesome work ;)")
+            result.add(user)
+        }
+
+        return result
+    }
+}
+
+class UserDto(name: String, comment: String) {
+    var name = name
+    var comment =  comment
 }

@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.culturapp.culturapp.R
 
 class DashboardFragment : Fragment() {
-    
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
