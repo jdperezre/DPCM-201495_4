@@ -10,6 +10,9 @@ class Constants {
         //Base API endpoint para eventos
         const val URL_BASE_EVENTOS = "$URL_BASE/eventos"
 
+        //Base API endpoint para Categorias
+        const val URL_BASE_CATEGORIAS = "$URL_BASE/categoriasEventos"
+
 
     }
 
