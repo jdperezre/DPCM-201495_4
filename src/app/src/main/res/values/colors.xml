@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#FFA700</color>
     <color name="colorAccent">#FFA700</color>
     <color name="backgroundWindow">#102733</color>
+    <color name="backgroundBottomMenu">#152F3E</color>
     <color name="white">#FFFFFF</color>
     <color name="gray_icons">#B9B9B9</color>
 </resources>
