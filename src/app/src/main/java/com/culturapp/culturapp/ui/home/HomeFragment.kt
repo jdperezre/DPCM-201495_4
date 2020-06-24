@@ -30,19 +30,20 @@ class HomeFragment : Fragment() {
         adapter?.notifyDataSetChanged()
     }
 
-    fun generateData(): ArrayList<UserDto> {
-        var result = ArrayList<UserDto>()
+    fun generateData(): ArrayList<EventDto> {
+        var result = ArrayList<EventDto>()
 
         for (i in 0..9) {
-            var user: UserDto = UserDto((i + 1).toString() + " Bett", "Awesome work ;)")
-            result.add(user)
+            var dto: EventDto = EventDto((i + 1).toString() + " Titulo Evento", "Mayo " +(i + 1).toString() + " de 2020", "Centro de espectáculos salón " + (i + 1).toString())
+            result.add(dto)
         }
 
         return result
     }
 }
 
-class UserDto(name: String, comment: String) {
-    var name = name
-    var comment =  comment
+class EventDto(title: String, date: String, location: String) {
+    var title = title
+    var date =  date
+    var location =  location
 }

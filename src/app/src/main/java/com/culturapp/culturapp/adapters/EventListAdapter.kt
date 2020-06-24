@@ -8,17 +8,19 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import com.culturapp.culturapp.R
-import com.culturapp.culturapp.ui.home.UserDto
+import com.culturapp.culturapp.ui.home.EventDto
 
-class EventListAdapter(private var activity: FragmentActivity, private var items: ArrayList<UserDto>): BaseAdapter() {
+class EventListAdapter(private var activity: FragmentActivity, private var items: ArrayList<EventDto>): BaseAdapter() {
 
     private class ViewHolder(row: View?) {
-        var txtName: TextView? = null
-        var txtComment: TextView? = null
+        var txtTitle: TextView? = null
+        var txtDate: TextView? = null
+        var txtLocation: TextView? = null
 
         init {
-            this.txtName = row?.findViewById<TextView>(R.id.txtName)
-            this.txtComment = row?.findViewById<TextView>(R.id.txtComment)
+            this.txtTitle = row?.findViewById<TextView>(R.id.txtTitle)
+            this.txtDate = row?.findViewById<TextView>(R.id.txtDate)
+            this.txtLocation = row?.findViewById<TextView>(R.id.txtLocation)
         }
     }
 
@@ -35,14 +37,15 @@ class EventListAdapter(private var activity: FragmentActivity, private var items
             viewHolder = view.tag as ViewHolder
         }
 
-        var userDto = items[position]
-        viewHolder.txtName?.text = userDto.name
-        viewHolder.txtComment?.text = userDto.comment
+        var eventDto = items[position]
+        viewHolder.txtTitle?.text = eventDto.title
+        viewHolder.txtDate?.text = eventDto.date
+        viewHolder.txtLocation?.text = eventDto.location
 
         return view as View
     }
 
-    override fun getItem(i: Int): UserDto {
+    override fun getItem(i: Int): EventDto {
         return items[i]
     }
 

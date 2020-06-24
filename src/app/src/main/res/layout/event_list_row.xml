@@ -1,34 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="100dp"
+    android:background="@drawable/rounded_item_list">
 
     <ImageView
         android:id="@+id/imgAvatar"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
-        android:src="@drawable/ic_home_black_24dp" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/imag" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@id/imgAvatar"
-        android:orientation="vertical">
+        android:layout_margin="6dp"
+        android:orientation="vertical"
+        android:id="@+id/layInfo">
+
 
         <TextView
-            android:id="@+id/txtName"
+            android:id="@+id/txtTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:fontFamily="@font/muli_bold"
+            android:text="Partido Copa Libertadores"
+            android:textSize="16dp"
+            android:textColor="@color/white"
             android:textStyle="bold"
-            />
-        <TextView
-            android:id="@+id/txtComment"
+            android:typeface="normal" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="comment"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_calendar" />
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:fontFamily="@font/muli_regular"
+                android:textColor="@color/white"
+                android:text="Ene 12, 2020"
+                android:textSize="11dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/txtLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:fontFamily="@font/muli_regular"
+                android:textColor="@color/white"
+                android:text="Estadio Atanasio Girardot, Carrera 74"
+                android:textSize="11dp" />
+
+        </LinearLayout>
     </LinearLayout>
+
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/layInfo"
+        app:srcCompat="@drawable/ic_contextual_menu"
+        android:paddingTop="6dp"/>
+
 </RelativeLayout>
