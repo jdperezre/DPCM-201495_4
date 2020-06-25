@@ -15,11 +15,6 @@ class CategoriaEventoBusiness: ICategoriaEventoBusiness {
     @Autowired
     val categoriaEventoRepository: CategoriaEventoRepository? = null
 
-    @Throws(BusinessException::class, NotFoundException::class)
-    override fun update(categoriaEvento: CategoriaEvento): CategoriaEvento {
-        TODO("Not yet implemented")
-    }
-
     @Throws(BusinessException::class)
     override fun list(): MutableList<CategoriaEvento>? {
        try {
