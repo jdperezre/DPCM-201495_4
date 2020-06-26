@@ -73,4 +73,10 @@
         <item name="background">@drawable/tab_indicator_ab_culturappstyle</item>
     </style>
 
+    <!-- This style is for the splash screen -->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
 </resources>
