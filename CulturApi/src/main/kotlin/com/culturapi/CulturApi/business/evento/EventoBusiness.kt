@@ -71,17 +71,17 @@ class EventoBusiness: IEventoBusiness {
     }
 
     @Throws(BusinessException::class, NotFoundException::class)
-    override fun findByNombre(nombre: String): List<Evento> {
+    override fun findByTitulo(titulo: String): List<Evento> {
         val op: Optional<List<Evento>>
 
         try{
-            op = eventoRepository!!.findByNombreIgnoreCase(nombre)
+            op = eventoRepository!!.findByTituloIgnoreCase(titulo)
         }catch (e:Exception){
             throw BusinessException(e.message)
         }
 
         if(!op.isPresent){
-            throw NotFoundException("No se encuentra la persona con el nombre = $nombre")
+            throw NotFoundException("No se encuentra la persona con el nombre = $titulo")
         }
 
         return op.get()

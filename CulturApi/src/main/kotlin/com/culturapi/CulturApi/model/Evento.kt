@@ -6,10 +6,11 @@ import javax.persistence.*
 
 @Entity
 @Table(name ="eventos")
-data class Evento(val titulo: String = "", val nombre: String = "",
-                  val organizacion: String = "",val telefono: String = "",
+data class Evento(val titulo: String = "", val organizacion: String = "",
+                  val descripcion: String = "",val telefono: String = "",
                   val direccion: String = "",val fecha_inicio: LocalDate? = null,
-                  val fecha_final: LocalDate? = null){
+                  val fecha_final: LocalDate? = null, val imagen: String = "",
+                  val idCategoria:Long = 0, val idEstado:Long = 0){
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

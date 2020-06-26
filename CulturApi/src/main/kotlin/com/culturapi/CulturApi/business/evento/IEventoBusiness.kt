@@ -7,5 +7,5 @@ interface IEventoBusiness {
     fun load(idEvento:Long): Evento
     fun save(evento: Evento):Evento
     fun remove(idEvento: Long)
-    fun findByNombre(nombre:String): List<Evento>
+    fun findByTitulo(titulo:String): List<Evento>
 }

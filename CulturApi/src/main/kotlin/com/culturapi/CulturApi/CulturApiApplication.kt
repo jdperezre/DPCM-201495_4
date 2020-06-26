@@ -18,13 +18,13 @@ class CulturApiApplication:CommandLineRunner{
 	override fun run(vararg args: String?) {
 
 		val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
-		val evento1 = Evento("Rock al parque", "evento cultural",
-				"Eventos S.A.S","3100000",
+		val evento = Evento("Rock al parque", "Eventos S.A.S",
+				"Evento cultural y ludico","3100000",
 				"Km 15 via el Roble", LocalDate.parse("25-11-2020", formatter),
-				LocalDate.parse("27-11-2020", formatter))
+				LocalDate.parse("27-11-2020", formatter),"img.jpg",1,2)
 
 
-		eventoRepository!!.save(evento1)
+		eventoRepository!!.save(evento)
 
 	}
 }

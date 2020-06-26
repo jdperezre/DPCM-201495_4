@@ -43,10 +43,10 @@ class EventoRestController {
     }
 
     //
-    @GetMapping("/nombre")
-    fun findByNombre(@RequestParam("nom") nombre: String): ResponseEntity<Any>{
+    @GetMapping("/titulo")
+    fun findByTitulo(@RequestParam("titulo") titulo: String): ResponseEntity<Any>{
         return try{
-            ResponseEntity(eventoBusiness!!.findByNombre(nombre), HttpStatus.OK)
+            ResponseEntity(eventoBusiness!!.findByTitulo(titulo), HttpStatus.OK)
         }catch (e: BusinessException){
             ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
         }catch (e: NotFoundException){

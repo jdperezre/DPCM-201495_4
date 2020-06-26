@@ -7,5 +7,5 @@ import java.util.*
 
 @Repository
 interface EventoRepository:JpaRepository<Evento,Long> {
-    fun findByNombreIgnoreCase(nombre:String): Optional<List<Evento>>
+    fun findByTituloIgnoreCase(titulo:String): Optional<List<Evento>>
 }
