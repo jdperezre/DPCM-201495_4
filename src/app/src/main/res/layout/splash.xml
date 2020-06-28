@@ -28,5 +28,69 @@
         app:layout_constraintVertical_bias="0.0"
         tools:srcCompat="@drawable/background_splash" />-->
 
+    <RelativeLayout
+        android:layout_width="281dp"
+        android:layout_height="783dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="16dp">
 
+        <TableLayout
+            android:layout_width="200dp"
+            android:layout_height="116dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="270dp"
+            android:layout_marginBottom="403dp"
+            android:gravity="right">
+
+            <TableRow
+                android:id="@+id/row0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_margin="2dp"
+                    android:src="@drawable/logo" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/muli_bold"
+                    android:text="CULTUR"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/muli_bold"
+                    android:text="APP"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="30sp" />
+            </TableRow>
+
+            <TextView
+                android:id="@+id/txtsubTitle"
+                android:fontFamily="@font/muli_regular"
+                android:text="¡Están sucediendo muchas cosas a tu alrededor! ¡Nuestra misión es proporcionar los Eventos que suceden en la ciudad!"
+                android:textColor="@color/white"
+                android:textSize="11dp" />
+        </TableLayout>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

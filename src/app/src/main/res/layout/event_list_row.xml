@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/event_list"
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:background="@drawable/rounded_item_list">
@@ -19,7 +20,6 @@
         android:layout_margin="6dp"
         android:orientation="vertical"
         android:id="@+id/layInfo">
-
 
         <TextView
             android:id="@+id/txtTitle"
@@ -82,13 +82,14 @@
     </LinearLayout>
 
 
-
-    <ImageView
+    <ImageButton
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/layInfo"
         app:srcCompat="@drawable/ic_contextual_menu"
-        android:paddingTop="6dp"/>
+        android:paddingTop="6dp"
+        android:onClick="menuFavorite"
+        android:background="?attr/selectableItemBackground"/>
 
 </RelativeLayout>

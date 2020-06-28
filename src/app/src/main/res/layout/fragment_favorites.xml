@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dashboard.DashboardFragment"
+    tools:context=".ui.favorites.FavoritesFragment"
     android:background="@color/backgroundWindow">
 
     <ListView
-        android:id="@+id/events_dashboard_listView"
+        android:id="@+id/events_favorites_listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="25dp"

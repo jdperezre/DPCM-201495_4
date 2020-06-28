@@ -4,12 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.culturapp.culturapp.R
-import com.culturapp.culturapp.adapters.EventListAdapter
+import com.culturapp.culturapp.adapters.EventListHomeAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -24,7 +21,7 @@ class HomeFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        var adapter = EventListAdapter(this.requireActivity(), generateData())
+        var adapter = EventListHomeAdapter(this.requireActivity(), generateData())
 
         events_listView?.adapter = adapter
         adapter?.notifyDataSetChanged()
@@ -42,7 +39,8 @@ class HomeFragment : Fragment() {
     }
 }
 
-class EventDto(title: String, date: String, location: String) {
+class EventDto(title: String, date: String, location: String
+) {
     var title = title
     var date =  date
     var location =  location

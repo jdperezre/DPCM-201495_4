@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/add_alarm"
-        android:title="@string/add_alarm"
+    <item android:id="@+id/edit_alarm"
+        android:title="@string/edit_alarm"
         android:icon="@drawable/add_alert_white_18dp"
         app:showAsAction="never">
     </item>
 
-    <item android:id="@+id/delete_favorite"
-        android:title="@string/delete_favorite"
+    <item android:id="@+id/delete_alarm"
+        android:title="@string/delete_alarm"
         android:icon="@drawable/add_alert_white_18dp"
         app:showAsAction="never">
     </item>
