@@ -1,10 +1,16 @@
 <resources>
     <string name="app_name">Culturapp</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_dashboard">Favoritos</string>
+    <string name="title_notifications">Alarmas</string>
     <string name="hint_custom_edittext">Ingrese el valor</string>
     <string name="inicio">Inicio</string>
     <string name="alertas">Alertas</string>
     <string name="favoritos">Favoritos</string>
+
+    <string name="add_alarm">Agregar alarma</string>
+    <string name="delete_favorite">Quitar de favoritos</string>
+
+    <string name="edit_alarm">Editar alarma</string>
+    <string name="delete_alarm">Quitar alarma</string>
 </resources>

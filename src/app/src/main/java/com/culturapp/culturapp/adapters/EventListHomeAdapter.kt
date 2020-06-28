@@ -8,9 +8,9 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import com.culturapp.culturapp.R
-import com.culturapp.culturapp.ui.favorites.EventDto
+import com.culturapp.culturapp.ui.home.EventDto
 
-class EventListAdapter(private var activity: FragmentActivity, private var items: ArrayList<com.culturapp.culturapp.ui.favorites.EventDto>): BaseAdapter() {
+class EventListHomeAdapter(private var activity: FragmentActivity, private var items: ArrayList<EventDto>): BaseAdapter() {
 
     private class ViewHolder(row: View?) {
         var txtTitle: TextView? = null
@@ -29,7 +29,7 @@ class EventListAdapter(private var activity: FragmentActivity, private var items
         val viewHolder: ViewHolder
         if (convertView == null) {
             val inflater = activity?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            view = inflater.inflate(R.layout.event_list_row, null)
+            view = inflater.inflate(R.layout.event_dashboard_list_row, null)
             viewHolder = ViewHolder(view)
             view?.tag = viewHolder
         } else {
