@@ -4,4 +4,7 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="hint_custom_edittext">Ingrese el valor</string>
+    <string name="inicio">Inicio</string>
+    <string name="alertas">Alertas</string>
+    <string name="favoritos">Favoritos</string>
 </resources>
