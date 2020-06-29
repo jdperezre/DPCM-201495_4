@@ -7,15 +7,6 @@
     tools:context=".ui.notifications.NotificationsFragment"
     android:background="@color/backgroundWindow">
 
-    <com.culturapp.culturapp.controls.CustomEditText
-        android:id="@+id/nameEditText"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
     <ListView
         android:id="@+id/events_notification_listView"
         android:layout_width="match_parent"

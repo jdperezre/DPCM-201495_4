@@ -22,9 +22,9 @@ class NotificationsFragment : Fragment() {
     }
 
     override fun onResume() {
-        nameEditText.SetInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_NORMAL)
-        nameEditText.SetHint(R.string.hint_custom_edittext);
-        nameEditText.SetIcon(R.drawable.ic_home_black_24dp)
+        //nameEditText.SetInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_NORMAL)
+        //nameEditText.SetHint(R.string.hint_custom_edittext);
+        //nameEditText.SetIcon(R.drawable.ic_home_black_24dp)
         super.onResume()
 
         var adapter = EventListNotificationAdapter(this.requireActivity(), generateData())
