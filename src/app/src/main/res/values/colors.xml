@@ -3,6 +3,7 @@
     <color name="colorPrimary">#102733</color>
     <color name="colorPrimaryDark">#102733</color>
     <color name="colorAccent">#FFA700</color>
+    <color name="yellowText">#FCCD00</color>
     <color name="backgroundWindow">#102733</color>
     <color name="backgroundBottomMenu">#152F3E</color>
     <color name="white">#FFFFFF</color>

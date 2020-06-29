@@ -1,8 +1,9 @@
 package com.culturapp.culturapp
 
-import android.app.Notification
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.Window
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -13,33 +14,50 @@ import com.culturapp.culturapp.ui.favorites.FavoritesFragment
 import com.culturapp.culturapp.ui.home.HomeFragment
 import com.culturapp.culturapp.ui.notifications.NotificationsFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.titlebar.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val customTitleSupported =  requestWindowFeature(Window.FEATURE_CUSTOM_TITLE)
         setContentView(R.layout.activity_main)
+
+        if (customTitleSupported) {
+            supportActionBar!!.hide()
+            window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar);
+            window.setBackgroundDrawableResource(R.color.backgroundWindow)
+        }
 
         nav_view.setOnItemSelectedListener {
             when(it){
-                R.id.home -> ShowDashboardFragment()
-                R.id.alarm -> ShowAlarmsFragment()
-                R.id.favorite -> ShowFavoritesFragment()
+                R.id.home -> showDashboardFragment()
+                R.id.alarm -> showAlarmsFragment()
+                R.id.favorite -> showFavoritesFragment()
             }
+        }
+
+        btnMenuLateral.setOnClickListener {
+            showLateralMenu()
         }
 
         nav_view.setItemSelected(R.id.home)
     }
 
-    private fun ShowFavoritesFragment() {
+    private fun showLateralMenu(){
+        startActivity(Intent(this, LateralMenuActivity::class.java))
+        overridePendingTransition(R.anim.leftin, R.anim.leftout);
+    }
+
+    private fun showFavoritesFragment() {
         replaceFragment(FavoritesFragment())
     }
 
-    private fun ShowAlarmsFragment() {
+    private fun showAlarmsFragment() {
         replaceFragment(NotificationsFragment())
     }
 
-    private fun ShowDashboardFragment() {
+    private fun showDashboardFragment() {
         replaceFragment(HomeFragment())
     }
 

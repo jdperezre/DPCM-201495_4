@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundWindow">
+
+<ImageView
+    android:id="@+id/ImageView01"
+    android:layout_width="24dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_home_actionbar"
+    app:layout_constraintBottom_toBottomOf="@+id/myTitle1"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/myTitle1" />
+
+<ImageView
+    android:id="@+id/btnMenuLateral"
+    android:layout_width="20dp"
+    android:layout_height="20dp"
+    android:layout_marginTop="4dp"
+    android:background="@drawable/ic_menu"
+    app:layout_constraintBottom_toBottomOf="@+id/myTitle2"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/myTitle2" />
+
+<TextView
+
+    android:id="@+id/myTitle1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:fontFamily="@font/muli_bold"
+    android:text="CULTUR"
+    android:textColor="@color/white"
+    android:textSize="20dp"
+    android:textStyle="bold"
+    app:layout_constraintStart_toEndOf="@+id/ImageView01"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+
+    android:id="@+id/myTitle2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/muli_bold"
+    android:text="APP"
+    android:textColor="@color/yellowText"
+    android:textSize="20dp"
+    android:textStyle="bold"
+    app:layout_constraintStart_toEndOf="@+id/myTitle1"
+    app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
