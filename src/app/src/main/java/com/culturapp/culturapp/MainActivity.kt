@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     //Popup menu
-    fun menuAlarm(view: View) {
+    fun menuFavorite(view: View) {
         showPopupMenu(view, R.menu.contextual_menu)
     }
 
@@ -98,7 +98,7 @@ class MainActivity : AppCompatActivity() {
         popupMenu.show()
     }
 
-    fun menuFavorite(view: View) {
+    fun menuAlarm(view: View) {
         showPopupMenuAlarm(view, R.menu.contextual_alarm_menu)
     }
 
