@@ -2,8 +2,11 @@ package com.culturapp.culturapp.controls
 
 import android.content.Context
 import android.text.InputType
+import android.text.method.ScrollingMovementMethod
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.LinearLayout
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.drawable.DrawableCompat
@@ -25,6 +28,28 @@ class CustomEditText @JvmOverloads constructor(
 
     fun SetInputType(type: Int){
         customEditText.inputType = type
+
+        if(type == InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE)
+        {
+            val scale = context.resources.displayMetrics.density
+            val widthScale = (300 * scale + 0.5f)
+            val heightScale = (100 * scale + 0.5f)
+            val marginScale = (16 * scale + 0.5f)
+            val params = LayoutParams(widthScale.toInt(), heightScale.toInt())
+            params.topMargin = marginScale.toInt()
+            customEditText.layoutParams = params
+
+            customEditText.isSingleLine = false
+            customEditText.imeOptions = EditorInfo.IME_FLAG_NO_ENTER_ACTION;
+            customEditText.setLines(5);
+            customEditText.maxLines = 50;
+            customEditText.minLines = 5;
+            customEditText.isVerticalScrollBarEnabled = true;
+            customEditText.movementMethod = ScrollingMovementMethod.getInstance();
+            customEditText.scrollBarStyle = View.SCROLLBARS_INSIDE_INSET;
+
+            customEditText.isElegantTextHeight = true
+        }
     }
 
     fun SetHint(resId: Int){

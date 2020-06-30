@@ -51,7 +51,7 @@ class LateralMenuActivity : AppCompatActivity() {
     }
 
     private fun showConfirmLogout(){
-
+        logout()
     }
 
     fun logout(){
