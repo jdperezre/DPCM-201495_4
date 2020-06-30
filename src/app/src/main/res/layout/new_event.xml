@@ -22,6 +22,7 @@
 
 
                 <ImageView
+                    android:id="@+id/imgEvent"
                     android:layout_width="300dp"
                     android:layout_height="200dp"
                     android:layout_alignParentTop="true"
