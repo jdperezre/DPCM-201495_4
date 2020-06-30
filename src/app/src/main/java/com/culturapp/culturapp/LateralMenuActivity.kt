@@ -1,9 +1,11 @@
 package com.culturapp.culturapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.Window
+import com.culturapp.culturapp.ui.events.EventsActivity
 import kotlinx.android.synthetic.main.lateral_menu.*
 
 class LateralMenuActivity : AppCompatActivity() {
@@ -21,21 +23,38 @@ class LateralMenuActivity : AppCompatActivity() {
         btnClose.setOnClickListener {
             onBackPressed()
         }
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
+        btnLogin.setOnClickListener { showLogin() }
+        btnProfile.setOnClickListener { showProfile() }
+        btnEvents.setOnClickListener { showEvents() }
+        btnLogout.setOnClickListener { showConfirmLogout() }
 
-        if (id == android.R.id.home) {
-            onBackPressed()
-            return true
-        }
-
-        return super.onOptionsItemSelected(item)
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
         overridePendingTransition(R.anim.rigthin, R.anim.rigthout);
+    }
+
+    private fun showLogin(){
+
+    }
+
+    private fun showProfile(){
+
+    }
+
+    private fun showEvents(){
+        startActivity(Intent(this, EventsActivity::class.java))
+        finish()
+        overridePendingTransition(R.anim.leftin, R.anim.leftout)
+    }
+
+    private fun showConfirmLogout(){
+
+    }
+
+    fun logout(){
+
     }
 }

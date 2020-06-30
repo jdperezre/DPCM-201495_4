@@ -8,7 +8,7 @@
     android:background="@color/backgroundWindow">
 
     <Button
-        android:id="@+id/linearLayout1"
+        android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="24dp"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent"></Button>
 
     <Button
-        android:id="@+id/linearLayout2"
+        android:id="@+id/btnProfile"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="24dp"
@@ -49,10 +49,10 @@
         android:drawablePadding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout1"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin"></Button>
 
     <Button
-        android:id="@+id/linearLayout3"
+        android:id="@+id/btnEvents"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="24dp"
@@ -71,10 +71,10 @@
         android:drawablePadding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/btnProfile"></Button>
 
     <Button
-        android:id="@+id/linearLayout4"
+        android:id="@+id/btnLogout"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="24dp"

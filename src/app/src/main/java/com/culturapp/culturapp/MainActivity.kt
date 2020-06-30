@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun showLateralMenu(){
         startActivity(Intent(this, LateralMenuActivity::class.java))
-        overridePendingTransition(R.anim.leftin, R.anim.leftout);
+        overridePendingTransition(R.anim.leftin, R.anim.leftout)
     }
 
     private fun showFavoritesFragment() {
