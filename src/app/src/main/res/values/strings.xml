@@ -14,7 +14,15 @@
     <string name="edit_alarm">Editar alarma</string>
     <string name="delete_alarm">Quitar alarma</string>
 
-<!--    events-->
+    <!--    events-->
+    <string name="hint_titulo">Título</string>
+    <string name="hint_descripcion">Descripción</string>
+    <string name="hint_fecha">Fecha</string>
+    <string name="hint_hora">Hora</string>
+    <string name="hint_lugar">Lugar</string>
+    <string name="hint_contacto">Contacto</string>
+    <string name="hint_telefono_contacto">Teléfono de contacto</string>
+
     <string name="edit_event">Ver y Editar Evento</string>
     <string name="delete_event">Eliminar Evento</string>
 </resources>
