@@ -3,19 +3,18 @@
     <string name="title_home">Inicio</string>
     <string name="title_dashboard">Favoritos</string>
     <string name="title_notifications">Alarmas</string>
+    <string name="hint_custom_edittext">Ingrese el valor</string>
     <string name="inicio">Inicio</string>
     <string name="alertas">Alertas</string>
     <string name="favoritos">Favoritos</string>
 
+<!--    alarms-->
     <string name="add_alarm">Agregar alarma</string>
     <string name="delete_favorite">Quitar de favoritos</string>
-
     <string name="edit_alarm">Editar alarma</string>
     <string name="delete_alarm">Quitar alarma</string>
 
-
-
-
+    <!--    events-->
     <string name="hint_titulo">Título</string>
     <string name="hint_descripcion">Descripción</string>
     <string name="hint_fecha">Fecha</string>
@@ -23,4 +22,7 @@
     <string name="hint_lugar">Lugar</string>
     <string name="hint_contacto">Contacto</string>
     <string name="hint_telefono_contacto">Teléfono de contacto</string>
+
+    <string name="edit_event">Ver y Editar Evento</string>
+    <string name="delete_event">Eliminar Evento</string>
 </resources>
