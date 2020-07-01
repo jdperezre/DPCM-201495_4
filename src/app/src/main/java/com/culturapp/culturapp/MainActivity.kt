@@ -99,9 +99,8 @@ class MainActivity : AppCompatActivity() {
         popupMenu.menuInflater.inflate(menu, popupMenu.menu)
         popupMenu.setOnMenuItemClickListener { item ->
             when (item.itemId) {
-                R.id.edit_alarm -> Toast.makeText(this, "Alarma editada", Toast.LENGTH_SHORT).show()
-                R.id.delete_alarm -> Toast.makeText(this, "Alarma eliminada", Toast.LENGTH_SHORT)
-                    .show()
+                R.id.add_alarm -> showCalendarAlarm()
+                R.id.delete_favorite -> Toast.makeText(this, "Favorito eliminado", Toast.LENGTH_SHORT).show()
             }
             true
         }
@@ -117,9 +116,8 @@ class MainActivity : AppCompatActivity() {
         popupMenu.menuInflater.inflate(menu, popupMenu.menu)
         popupMenu.setOnMenuItemClickListener { item ->
             when (item.itemId) {
-                R.id.add_alarm -> showCalendarAlarm()
-                R.id.delete_favorite -> Toast.makeText(this, "Favorito eliminado", Toast.LENGTH_SHORT)
-                    .show()
+                R.id.edit_alarm -> Toast.makeText(this, "Alarma editada", Toast.LENGTH_SHORT).show()
+                R.id.delete_alarm -> Toast.makeText(this, "Alarma eliminada", Toast.LENGTH_SHORT).show()
             }
              true
         }
