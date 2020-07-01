@@ -81,9 +81,29 @@ class EventoBusiness: IEventoBusiness {
         }
 
         if(!op.isPresent){
-            throw NotFoundException("No se encuentra la persona con el nombre = $titulo")
+            throw NotFoundException("No se encuentra el titulo con el nombre de = $titulo")
         }
 
         return op.get()
     }
+
+
+    @Throws(BusinessException::class, NotFoundException::class)
+    override fun findByIdCategoria(idCategoria: String): List<Evento> {
+        val op: Optional<List<Evento>>
+
+        try{
+            op = eventoRepository!!.findByIdCategoriaIgnoreCase(idCategoria)
+        }catch (e:Exception){
+            throw BusinessException(e.message)
+        }
+
+        if(!op.isPresent){
+            throw NotFoundException("No se encuentra el Categoria con el nombre de = $idCategoria")
+        }
+
+        return op.get()
+    }
+
+
 }
