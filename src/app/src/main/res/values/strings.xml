@@ -8,9 +8,13 @@
     <string name="alertas">Alertas</string>
     <string name="favoritos">Favoritos</string>
 
+<!--    alarms-->
     <string name="add_alarm">Agregar alarma</string>
     <string name="delete_favorite">Quitar de favoritos</string>
-
     <string name="edit_alarm">Editar alarma</string>
     <string name="delete_alarm">Quitar alarma</string>
+
+<!--    events-->
+    <string name="edit_event">Ver y Editar Evento</string>
+    <string name="delete_event">Eliminar Evento</string>
 </resources>
