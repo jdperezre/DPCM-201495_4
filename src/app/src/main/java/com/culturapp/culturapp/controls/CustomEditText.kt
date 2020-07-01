@@ -81,12 +81,12 @@ class CustomEditText @JvmOverloads constructor(
 
             val c = Calendar.getInstance()
             val hour = c.get(Calendar.HOUR)
-            val second = c.get(Calendar.SECOND)
+            val minute = c.get(Calendar.MINUTE)
 
             customEditText.setOnClickListener {
                 val dpd = TimePickerDialog(this.context,  TimePickerDialog.OnTimeSetListener{ view, mHour, mSecond->
                     customEditText.setText("$mHour:$mSecond")
-                }, hour, second, false)
+                }, hour, minute, false)
                 dpd.show()
             }
         }

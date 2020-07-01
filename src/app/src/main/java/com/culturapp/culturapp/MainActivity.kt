@@ -1,7 +1,14 @@
 package com.culturapp.culturapp
 
+import android.app.AlarmManager
+import android.app.DatePickerDialog
+import android.app.PendingIntent
+import android.app.TimePickerDialog
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.Window
 import android.widget.PopupMenu
@@ -13,8 +20,11 @@ import androidx.fragment.app.FragmentTransaction
 import com.culturapp.culturapp.ui.favorites.FavoritesFragment
 import com.culturapp.culturapp.ui.home.HomeFragment
 import com.culturapp.culturapp.ui.notifications.NotificationsFragment
+import com.google.android.material.datepicker.MaterialDatePicker.Builder.datePicker
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.titlebar.*
+import java.util.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -107,7 +117,7 @@ class MainActivity : AppCompatActivity() {
         popupMenu.menuInflater.inflate(menu, popupMenu.menu)
         popupMenu.setOnMenuItemClickListener { item ->
             when (item.itemId) {
-                R.id.add_alarm -> Toast.makeText(this, "Alarma agregada", Toast.LENGTH_SHORT).show()
+                R.id.add_alarm -> showCalendarAlarm()
                 R.id.delete_favorite -> Toast.makeText(this, "Favorito eliminado", Toast.LENGTH_SHORT)
                     .show()
             }
@@ -116,4 +126,68 @@ class MainActivity : AppCompatActivity() {
         popupMenu.show()
     }
 
+    //Alarms
+
+    lateinit var context: Context
+    lateinit var alarmManager: AlarmManager
+
+
+    private fun showCalendarAlarm() {
+
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+        val hour = c.get(Calendar.HOUR)
+        val minute = c.get(Calendar.MINUTE)
+
+        val dpdDate = DatePickerDialog(this.context,  DatePickerDialog.OnDateSetListener{ view, mYear, mMonth, mDay->
+            val dpdHour = TimePickerDialog(this.context,  TimePickerDialog.OnTimeSetListener{ view, mHour, mMinute->
+                val calendar: Calendar = GregorianCalendar(
+                    mYear,
+                    mMonth,
+                    mDay,
+                    mHour,
+                    mMinute
+                )
+
+                createAlarm(calendar.timeInMillis)
+
+            }, hour, minute, false)
+            dpdHour.show()
+        }, year, month, day)
+        dpdDate.show()
+
+
+
+    }
+
+
+    public fun createAlarm(milliseconds: Long){
+        val intent = Intent(context, Receiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        Log.d("MainActivity", " Create : " + Date().toString())
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + milliseconds, pendingIntent)
+    }
+
+    public fun updateAlarm(second: Long){
+        //val second = edt_timer.text.toString().toInt() * 1000
+        val intent = Intent(context, Receiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        Log.d("MainActivity", " Update : " + Date().toString())
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + second, pendingIntent)
+    }
+
+    public fun cancelAlarm(){
+        val intent = Intent(context, Receiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        Log.d("MainActivity", " Cancel : " + Date().toString())
+        alarmManager.cancel(pendingIntent)
+    }
+}
+
+class Receiver : BroadcastReceiver() {
+    override fun onReceive(context: Context?, intent: Intent?) {
+        Log.d("MainActivity", " Receiver : " + Date().toString())
+    }
 }
