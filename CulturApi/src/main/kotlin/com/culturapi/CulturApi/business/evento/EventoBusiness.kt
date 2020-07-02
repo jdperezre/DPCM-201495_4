@@ -35,7 +35,6 @@ class EventoBusiness: IEventoBusiness {
         if(!op.isPresent){
             throw NotFoundException("No se encuentra el evento con este id =$idEvento")
         }
-
         return op.get()
     }
 
@@ -60,7 +59,7 @@ class EventoBusiness: IEventoBusiness {
         }
 
         if (!op.isPresent){
-            throw NotFoundException("No se encuentra el evento con id=$idEvento")
+            throw NotFoundException("No se encuentra el evento con este id=$idEvento")
         }else{
             try {
                 eventoRepository!!.deleteById(idEvento)
@@ -81,7 +80,7 @@ class EventoBusiness: IEventoBusiness {
         }
 
         if(!op.isPresent){
-            throw NotFoundException("No se encuentra el titulo con el nombre de = $titulo")
+            throw NotFoundException("No se encuentra el titulo= $titulo")
         }
 
         return op.get()
@@ -96,14 +95,34 @@ class EventoBusiness: IEventoBusiness {
             op = eventoRepository!!.findByIdCategoriaIgnoreCase(idCategoria)
         }catch (e:Exception){
             throw BusinessException(e.message)
+
         }
 
         if(!op.isPresent){
-            throw NotFoundException("No se encuentra el Categoria con el nombre de = $idCategoria")
+            throw NotFoundException("No se encuentra el Categoria= $idCategoria")
         }
 
         return op.get()
     }
+
+    @Throws(BusinessException::class, NotFoundException::class)
+    override fun findByFecha(idCategoria: String): List<Evento> {
+        val op: Optional<List<Evento>>
+
+        try{
+            op = eventoRepository!!.findByIdCategoriaIgnoreCase(idCategoria)
+        }catch (e:Exception){
+            throw BusinessException(e.message)
+
+        }
+
+        if(!op.isPresent){
+            throw NotFoundException("No se encuentra el Categoria= $idCategoria")
+        }
+
+        return op.get()
+    }
+
 
 
 }

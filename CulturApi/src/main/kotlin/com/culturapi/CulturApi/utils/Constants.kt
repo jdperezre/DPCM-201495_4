@@ -16,6 +16,15 @@ class Constants {
         //Base API endpoint para Usuarios
         const val URL_BASE_USUARIOS = "$URL_BASE/usuarios"
 
+        //Base API endpoint para Estados
+        const val URL_BASE_ESTADO = "$URL_BASE/estados"
+
+        //Base API endpoint para Roles
+        const val URL_BASE_ROL = "$URL_BASE/roles"
+
+        //Base API endpoint para Favoritos
+        const val URL_BASE_FAVORITO = "$URL_BASE/favoritos"
+
 
     }
 

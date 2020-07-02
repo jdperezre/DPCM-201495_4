@@ -9,4 +9,5 @@ interface IEventoBusiness {
     fun remove(idEvento: Long)
     fun findByTitulo(titulo:String): List<Evento>
     fun findByIdCategoria(idCategoria:String): List<Evento>
+    fun findByFecha(idCategoria:String): List<Evento>
 }
