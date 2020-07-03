@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Culturapp</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="hint_custom_edittext">Ingrese el valor</string>
-</resources>
