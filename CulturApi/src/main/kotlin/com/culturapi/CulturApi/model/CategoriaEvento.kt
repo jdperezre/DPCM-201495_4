@@ -4,8 +4,11 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "categoriaEventos")
-data class CategoriaEvento(val categoria: String = "", val descripcion: String = "",
-                           val icono: String = ""){
+data class CategoriaEvento(
+
+        val categoria: String = "",
+        val descripcion: String = "",
+        val icono: String = ""){
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id:Long = 0

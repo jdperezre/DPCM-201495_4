@@ -11,6 +11,7 @@ import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 @SpringBootApplication
@@ -31,7 +32,7 @@ class CulturApiApplication:CommandLineRunner{
 		val evento = Evento("Rock al parque", "Eventos S.A.S",
 				"Evento cultural y ludico","3100000",
 				"Km 15 via el Roble", LocalDate.parse("25-11-2020", formatter),
-				LocalDate.parse("27-11-2020", formatter),"img.jpg","1",2)
+				LocalDate.parse("27-11-2020", formatter), LocalDateTime.now(),"img.jpg","1",2)
 
 		eventoRepository!!.save(evento)
 
