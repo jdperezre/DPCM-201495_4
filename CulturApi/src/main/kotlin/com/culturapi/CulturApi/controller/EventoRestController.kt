@@ -10,6 +10,10 @@ import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.server.ResponseStatusException
+
+
+
 
 @RestController
 @RequestMapping(Constants.URL_BASE_EVENTOS)
@@ -20,7 +24,7 @@ class EventoRestController {
     val eventoBusiness: IEventoBusiness? = null
 
     // Lista todos los eventos
-    @GetMapping("")
+    @GetMapping("/all")
     fun list(): ResponseEntity<List<Evento>> {
         return try {
             ResponseEntity(eventoBusiness!!.list(), HttpStatus.OK)
@@ -42,7 +46,7 @@ class EventoRestController {
         }
     }
 
-    // Consulta por titulo
+    // Consulta el evento por titulo
     @GetMapping("/titulo/{titulo}")
     fun findByTitulo(@PathVariable("titulo") titulo: String): ResponseEntity<Any>{
         return try{
@@ -55,7 +59,7 @@ class EventoRestController {
     }
 
 
-    // Consulta por IdCategoria
+    // Consulta los eventos por IdCategoria
     @GetMapping("/categoria/{idCategoria}")
     fun findByIdCategoria(@PathVariable("idCategoria") idCategoria: String): ResponseEntity<Any>{
         return try{
@@ -67,7 +71,7 @@ class EventoRestController {
         }
     }
 
-    // Registrar Evento
+    // Registrar Nuevo Evento
     @PostMapping("")
     fun insert(@RequestBody evento: Evento): ResponseEntity<Any> {
         return try {
@@ -81,7 +85,7 @@ class EventoRestController {
 
     }
 
-    // Actualizar evento
+    // Actualizar el Evento
     @PutMapping("")
     fun update(@RequestBody evento: Evento): ResponseEntity<Any> {
         return try {
@@ -93,7 +97,7 @@ class EventoRestController {
 
     }
 
-    //Eliminar evento por Id
+    //Eliminar Evento por Id
     @DeleteMapping("/{id}")
     fun delete(@PathVariable("id") idEvento: Long): ResponseEntity<Any> {
         return try {
