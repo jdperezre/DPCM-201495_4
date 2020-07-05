@@ -139,6 +139,8 @@ class MainActivity : AppCompatActivity() {
         val hour = c.get(Calendar.HOUR)
         val minute = c.get(Calendar.MINUTE)
 
+        this.context = this;
+
         val dpdDate = DatePickerDialog(this.context,  DatePickerDialog.OnDateSetListener{ view, mYear, mMonth, mDay->
             val dpdHour = TimePickerDialog(this.context,  TimePickerDialog.OnTimeSetListener{ view, mHour, mMinute->
                 val calendar: Calendar = GregorianCalendar(
@@ -162,21 +164,23 @@ class MainActivity : AppCompatActivity() {
 
 
     public fun createAlarm(milliseconds: Long){
+        alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, Receiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         Log.d("MainActivity", " Create : " + Date().toString())
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + milliseconds, pendingIntent)
     }
 
-    public fun updateAlarm(second: Long){
-        //val second = edt_timer.text.toString().toInt() * 1000
+    public fun updateAlarm(milliseconds: Long){
+        alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, Receiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         Log.d("MainActivity", " Update : " + Date().toString())
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + second, pendingIntent)
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + milliseconds, pendingIntent)
     }
 
     public fun cancelAlarm(){
+        alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, Receiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         Log.d("MainActivity", " Cancel : " + Date().toString())
