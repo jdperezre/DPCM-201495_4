@@ -41,8 +41,15 @@ class UsuarioBusiness: IUsuarioBusiness {
 
     @Throws(BusinessException::class)
     override fun save(usuario: Usuario): Usuario {
+        val op: Optional<Usuario>
         try {
-            return usuarioRepository!!.save(usuario)
+            op = usuarioRepository!!.findByEmailIgnoreCase(usuario.email)
+            if(!op.isPresent) {
+                return usuarioRepository!!.save(usuario)
+            }
+            else {
+                throw BusinessException("Este email ya se encuentra registrado")
+            }
         } catch (e: Exception) {
             throw BusinessException(e.message)
         }

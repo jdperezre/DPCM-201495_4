@@ -25,7 +25,20 @@ class Constants {
         //Base API endpoint para Favoritos
         const val URL_BASE_FAVORITO = "$URL_BASE/favoritos"
 
+        //Base API endpoint para Login
+        const val URL_BASE_LOGIN = "$URL_BASE/loginRequest"
 
+        //Usuario inactivo
+        const val USUARIO_INACTIVO = "Usuario inactivo"
+
+        //Contraseña Invalida
+        const val CONTRASENA_INVALIDA = "Contraseña invalida"
+
+        //Contraseña Valida y Usuario Activo
+        const val ACCESO_APROBADO = "¡Bienvenido!"
+
+        //Status de inactivo
+        const val INACTIVO = 2
     }
 
 }

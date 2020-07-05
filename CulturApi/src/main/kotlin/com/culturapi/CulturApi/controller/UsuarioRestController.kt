@@ -35,9 +35,9 @@ class UsuarioRestController {
         return try {
             ResponseEntity(usuarioBusiness!!.load(idUsuario), HttpStatus.OK)
         } catch (e: BusinessException) {
-            ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
+            ResponseEntity(e.message,HttpStatus.INTERNAL_SERVER_ERROR)
         } catch (e: NotFoundException) {
-            ResponseEntity(HttpStatus.NOT_FOUND)
+            ResponseEntity(e.message,HttpStatus.NOT_FOUND)
         }
     }
 
@@ -50,7 +50,7 @@ class UsuarioRestController {
             responseHeaders.set("location", Constants.URL_BASE_USUARIOS + "/" + usuario.id)
             ResponseEntity(responseHeaders, HttpStatus.CREATED)
         } catch (e: BusinessException) {
-            ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
+            ResponseEntity(e.message,HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
 
@@ -61,7 +61,7 @@ class UsuarioRestController {
             usuarioBusiness!!.save(usuario)
             ResponseEntity(HttpStatus.OK)
         } catch (e: BusinessException) {
-            ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
+            ResponseEntity(e.message,HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
 
@@ -72,9 +72,9 @@ class UsuarioRestController {
             usuarioBusiness!!.remove(idUsuario)
             ResponseEntity(HttpStatus.OK)
         } catch (e: BusinessException) {
-            ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
+            ResponseEntity(e.message,HttpStatus.INTERNAL_SERVER_ERROR)
         } catch (e: NotFoundException) {
-            ResponseEntity(HttpStatus.NOT_FOUND)
+            ResponseEntity(e.message,HttpStatus.NOT_FOUND)
         }
     }
 }

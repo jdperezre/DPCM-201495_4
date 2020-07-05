@@ -4,7 +4,6 @@ import com.culturapi.CulturApi.dao.CategoriaEventoRepository
 import com.culturapi.CulturApi.exception.BusinessException
 import com.culturapi.CulturApi.exception.NotFoundException
 import com.culturapi.CulturApi.model.CategoriaEvento
-import com.culturapi.CulturApi.model.Evento
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.util.*
@@ -42,8 +41,15 @@ class CategoriaEventoBusiness: ICategoriaEventoBusiness {
 
     @Throws(BusinessException::class)
     override fun save(categoriaEvento: CategoriaEvento): CategoriaEvento {
+        val op: Optional<CategoriaEvento>
         try {
-            return categoriaEventoRepository!!.save(categoriaEvento)
+            op = categoriaEventoRepository!!.findByCategoriaIgnoreCase(categoriaEvento.categoria)
+            if(!op.isPresent) {
+                return categoriaEventoRepository!!.save(categoriaEvento)
+            }
+            else {
+                throw BusinessException("Esta categoria ya se encuentra registrada")
+            }
         } catch (e: Exception) {
             throw BusinessException(e.message)
         }
