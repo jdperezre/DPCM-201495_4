@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Culturappstyle">
-        <activity android:name=".ui.login.RegisterUserInfoActivity"></activity>
+        <activity android:name=".ui.login.ForgetPasswordActivity"></activity>
+        <activity android:name=".ui.login.ForgetTokenActivity" />
+        <activity android:name=".ui.login.RegisterUserInfoActivity" />
         <activity android:name=".ui.login.RegisterLoginInfoActivity" />
         <activity android:name=".ui.login.ForgetEmailActivity" />
         <activity

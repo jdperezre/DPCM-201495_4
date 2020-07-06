@@ -27,13 +27,13 @@
     <string name="delete_event">Eliminar Evento</string>
 
     <string name="login">Iniciar sesión</string>
-    <string name="forget_password">Recuperar contraseña</string>
+    <string name="forget_password">Recuperar \ncontraseña</string>
     <string name="register">Registro</string>
-    <string name="txt_forget_password">¿Olvidaste tu contraseña?</string>
+    <string name="txt_forget_password">¿Olvidaste \ntu \ncontraseña?</string>
     <string name="txt_register">¿No tienes Cuenta? Regístrate</string>
     <string name="login_google">Accede con Google</string>
-    <string name="forget_instruction">Introduce tu Email para restablecer tu contraseña. Enviaremos un código de seguridad.</string>
-    <string name="register_instruction">Ingresa la información para acceder a la aplicación</string>
+    <string name="forget_instruction">Introduce tu Email para restablecer \ntu contraseña. Enviaremos un \ncódigo de seguridad.</string>
+    <string name="register_instruction">Ingresa la información \npara acceder a la aplicación</string>
     <string name="next">Siguiente</string>
     <string name="back">Volver</string>
     <string name="title_activity_login">LoginActivity</string>
@@ -63,4 +63,6 @@
     <string name="terminos_y_condiciones">He leído y acepto los \nTérminos y condiciones</string>
     <string name="ya_tienes_cuenta">¿Ya tienes una cuenta? \n Inicia sesión</string>
     <string name="finalizar">Finalizar</string>
+    <string name="hint_codigo">Código</string>
+
 </resources>

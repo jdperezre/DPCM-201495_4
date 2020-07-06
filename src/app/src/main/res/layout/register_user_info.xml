@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundWindow"
     android:paddingHorizontal="55dp"
+    android:paddingVertical="20dp"
     tools:context=".MainActivity">
 
     <ImageView
@@ -40,15 +41,15 @@
         android:layout_width="296dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/rounded_item_dash_list"
-        android:fontFamily="@font/muli_bold"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_info_legend"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
         android:orientation="horizontal"
         android:padding="12dp"
-        android:gravity="center"
         android:text="Ingresa la información \npersonal"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:layout_marginTop="30dp"
         app:layout_anchor="@+id/imageLogo"
         app:layout_anchorGravity="center"
         app:layout_constraintEnd_toEndOf="parent"
