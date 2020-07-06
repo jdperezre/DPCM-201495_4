@@ -1,6 +1,5 @@
 package com.culturapp.culturapp
 
-import android.R
 import android.app.AlarmManager
 import android.app.DatePickerDialog
 import android.app.PendingIntent
@@ -12,6 +11,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.Window
+import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +24,7 @@ import com.culturapp.culturapp.ui.notifications.NotificationsFragment
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.titlebar.*
+import java.io.File
 import java.util.*
 
 
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         val customTitleSupported =  requestWindowFeature(Window.FEATURE_CUSTOM_TITLE)
         setContentView(R.layout.activity_main)
         //Initializing the ImageView
-        val imageView = R.id.imageView;
+        val imageView = findViewById<ImageView>(R.id.imageView)
 
         if (customTitleSupported) {
             supportActionBar!!.hide()
