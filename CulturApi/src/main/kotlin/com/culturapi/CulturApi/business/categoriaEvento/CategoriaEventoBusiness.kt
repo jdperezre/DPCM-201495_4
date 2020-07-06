@@ -33,7 +33,7 @@ class CategoriaEventoBusiness: ICategoriaEventoBusiness {
         }
 
         if(!op.isPresent){
-            throw NotFoundException("No se encuentra la categoria con este id =$idCategoriaEvento")
+            throw NotFoundException("No se encuentra la categoria con este id = $idCategoriaEvento")
         }
 
         return op.get()

@@ -7,5 +7,5 @@ import java.util.*
 
 @Repository
 interface FavoritoRepository: JpaRepository<Favorito, Long> {
-
+    fun findByIdUsuario(idUsuario:Long): List<Favorito>
 }

@@ -5,8 +5,8 @@ import javax.persistence.*
 @Entity
 @Table(name ="favoritos")
 data class Favorito (
-        val id_Usuario: String = "",
-        val id_Evento: String = ""){
+        val idUsuario: Long = 0,
+        val idEvento: Long = 0){
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

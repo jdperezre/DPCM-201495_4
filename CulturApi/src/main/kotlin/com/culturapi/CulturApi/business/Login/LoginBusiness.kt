@@ -37,7 +37,7 @@ class LoginBusiness:ILoginBusiness {
         }
 
         if(!op.isPresent){
-            throw NotFoundException("No se encuentra el usuario con este email =${login.email}")
+            throw NotFoundException("No se encuentra el usuario con este email = ${login.email}")
         }
         else{
 

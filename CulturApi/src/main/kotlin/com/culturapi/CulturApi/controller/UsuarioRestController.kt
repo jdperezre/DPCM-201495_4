@@ -35,7 +35,7 @@ class UsuarioRestController {
         return try {
             ResponseEntity(usuarioBusiness!!.load(idUsuario), HttpStatus.OK)
         } catch (e: BusinessException) {
-            ResponseEntity(e.message,HttpStatus.INTERNAL_SERVER_ERROR)
+            ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
         } catch (e: NotFoundException) {
             ResponseEntity(e.message,HttpStatus.NOT_FOUND)
         }

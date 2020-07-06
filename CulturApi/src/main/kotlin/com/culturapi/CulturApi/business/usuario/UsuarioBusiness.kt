@@ -16,10 +16,11 @@ class UsuarioBusiness: IUsuarioBusiness {
 
     @Throws(BusinessException::class)
     override fun list(): MutableList<Usuario>? {
+        val response = Error()
         try {
             return usuarioRepository!!.findAll()
         }catch (e:Exception){
-            throw BusinessException(e.message)
+            throw BusinessException(response.message)
         }
     }
 
@@ -33,7 +34,7 @@ class UsuarioBusiness: IUsuarioBusiness {
         }
 
         if(!op.isPresent){
-            throw NotFoundException("No se encuentra el usuario con este id =$idUsuario")
+            throw NotFoundException("No se encuentra el usuario con este id = $idUsuario")
         }
 
         return op.get()
@@ -66,7 +67,7 @@ class UsuarioBusiness: IUsuarioBusiness {
         }
 
         if (!op.isPresent){
-            throw NotFoundException("No se encuentra el usuario con id=$idUsuario")
+            throw NotFoundException("No se encuentra el usuario con id = $idUsuario")
         }else{
             try {
                 usuarioRepository!!.deleteById(idUsuario)

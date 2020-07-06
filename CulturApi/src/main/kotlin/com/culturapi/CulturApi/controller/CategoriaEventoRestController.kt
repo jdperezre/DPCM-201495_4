@@ -36,9 +36,9 @@ class CategoriaEventoRestController {
         return try {
             ResponseEntity(categoriaEventoBusiness!!.load(idCategoriaEvento), HttpStatus.OK)
         } catch (e: BusinessException) {
-            ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
+            ResponseEntity(e.message,HttpStatus.INTERNAL_SERVER_ERROR)
         } catch (e: NotFoundException) {
-            ResponseEntity(HttpStatus.NOT_FOUND)
+            ResponseEntity(e.message,HttpStatus.NOT_FOUND)
         }
     }
 
@@ -51,7 +51,7 @@ class CategoriaEventoRestController {
             responseHeaders.set("location", Constants.URL_BASE_EVENTOS + "/" + categoriaEvento.id)
             ResponseEntity(responseHeaders, HttpStatus.CREATED)
         } catch (e: BusinessException) {
-            ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
+            ResponseEntity(e.message,HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
 
@@ -62,7 +62,7 @@ class CategoriaEventoRestController {
             categoriaEventoBusiness!!.save(categoriaEvento)
             ResponseEntity(HttpStatus.OK)
         } catch (e: BusinessException) {
-            ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
+            ResponseEntity(e.message,HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
 
@@ -73,9 +73,9 @@ class CategoriaEventoRestController {
             categoriaEventoBusiness!!.remove(idCategoriaEvento)
             ResponseEntity(HttpStatus.OK)
         } catch (e: BusinessException) {
-            ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
+            ResponseEntity(e.message,HttpStatus.INTERNAL_SERVER_ERROR)
         } catch (e: NotFoundException) {
-            ResponseEntity(HttpStatus.NOT_FOUND)
+            ResponseEntity(e.message,HttpStatus.NOT_FOUND)
         }
     }
 }
