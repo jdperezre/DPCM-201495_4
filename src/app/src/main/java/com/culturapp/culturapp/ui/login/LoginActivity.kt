@@ -15,22 +15,21 @@ import kotlinx.android.synthetic.main.titlebar_events.*
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //val customTitleSupported =  requestWindowFeature(Window.FEATURE_CUSTOM_TITLE)
+        val customTitleSupported =  requestWindowFeature(Window.FEATURE_CUSTOM_TITLE)
         setContentView(R.layout.login)
 
-        /*if (customTitleSupported) {
+        if (customTitleSupported) {
             supportActionBar!!.hide()
             window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar_basic);
             window.setBackgroundDrawableResource(R.color.backgroundWindow)
         }
 
-        btnBack.setOnClickListener{onBackPressed()}
-*/
+
         initControls()
         setupEvents()
 
         //TODO: Mostrar cuando se implemente la funcionalidad
-        btnGoogle.visibility = View.GONE
+        //btnGoogle.visibility = View.GONE
     }
 
     override fun onBackPressed() {
@@ -63,6 +62,10 @@ class LoginActivity : AppCompatActivity() {
         textRegister.setOnClickListener{
             startActivity(Intent(this, RegisterLoginInfoActivity::class.java))
             overridePendingTransition(R.anim.leftin, R.anim.leftout)
+        }
+
+        btnBack.setOnClickListener {
+            onBackPressed()
         }
     }
 
