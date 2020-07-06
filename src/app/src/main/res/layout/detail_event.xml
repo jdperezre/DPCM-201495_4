@@ -16,52 +16,52 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <!--Category event-->
-        <LinearLayout
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/shape_black"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="8dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp">
 
+            <!--Category event-->
+            <RelativeLayout
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_gravity="left"
+                android:background="@drawable/shape_black"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp">
 
+                <ImageView
+                    android:id="@+id/imgCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="left"
+                    android:src="@drawable/sports_tennis_white_18dp" />
+
+                <TextView
+                    android:id="@+id/txtTitleCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imgCategory"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/muli_bold"
+                    android:text="Deportes"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:typeface="normal" />
+            </RelativeLayout>
+
+            <!--Img event-->
             <ImageView
-                android:id="@+id/imgCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imgEvent"
-                android:layout_alignParentLeft="true"
-                android:layout_gravity="left"
-                android:src="@drawable/sports_tennis_white_18dp" />
-
-            <TextView
-                android:id="@+id/txtTitleCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/imgCategory"
-                android:layout_gravity="left"
-                android:fontFamily="@font/muli_bold"
-                android:text="Deportes"
-                android:textColor="@color/white"
-                android:textSize="12dp"
-                android:textStyle="bold"
-                android:typeface="normal" />
-        </LinearLayout>
-
-        <!--Img event-->
-        <ImageView
-            android:id="@+id/imgEvent"
-            android:layout_width="300dp"
-            android:layout_height="182dp"
-            android:layout_below="@id/imgCategory"
-            android:layout_alignParentLeft="true"
-            android:layout_gravity="center"
-            android:padding="15dp"
-            android:src="@drawable/imag" />
+                android:id="@+id/imgEvent"
+                android:layout_width="400dp"
+                android:layout_height="182dp"
+                android:layout_gravity="center"
+                android:padding="15dp"
+                android:src="@drawable/imag" />
+        </RelativeLayout>
 
         <!--Title event-->
         <TextView
@@ -148,7 +148,7 @@
 
         <!--Description-->
         <ScrollView
-            android:layout_width="371dp"
+            android:layout_width="361dp"
             android:layout_height="152dp"
             android:scrollbarAlwaysDrawVerticalTrack="true">
 
@@ -207,8 +207,8 @@
                     android:id="@+id/txtCall"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:gravity="center"
                     android:fontFamily="@font/muli_regular"
+                    android:gravity="center"
                     android:text="@string/call"
                     android:textColor="@color/white"
                     android:textSize="16dp"
@@ -240,8 +240,8 @@
                     android:id="@+id/txtFavorite"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:gravity="center"
                     android:fontFamily="@font/muli_regular"
+                    android:gravity="center"
                     android:text="@string/favorite_add"
                     android:textColor="@color/white"
                     android:textSize="16dp"
@@ -273,8 +273,8 @@
                     android:id="@+id/txtNotification"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:gravity="center"
                     android:fontFamily="@font/muli_regular"
+                    android:gravity="center"
                     android:text="@string/notification_add"
                     android:textColor="@color/white"
                     android:textSize="16dp"
