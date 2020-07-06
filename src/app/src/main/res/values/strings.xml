@@ -51,4 +51,7 @@
     <string name="notification_add">Agregar alarma</string>
     <string name="description_event">Ya está a la venta la boletería para la ida de la tercera fase de la Conmebol Libertadores 2020, el Atlético Independiente Antioquia se medirá a River Juniors este martes 182de enero a partir de las 7:00 de la noche en el máximo escenario de los antioqueños</string>
 
+
+    <string name="hint_usuario">Usuario</string>
+    <string name="hint_contrasena">Contraseña</string>
 </resources>
