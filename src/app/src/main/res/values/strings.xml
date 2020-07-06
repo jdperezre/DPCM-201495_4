@@ -54,4 +54,13 @@
 
     <string name="hint_usuario">Usuario</string>
     <string name="hint_contrasena">Contraseña</string>
+    <string name="hint_confirm">Confirme Contraseña</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_nombres">Nombres</string>
+    <string name="hint_apellidos">Apellidos</string>
+    <string name="hint_celular">Número celular</string>
+    <string name="hint_fecha_nacimiento">Fecha de nacimiento</string>
+    <string name="terminos_y_condiciones">He leído y acepto los \nTérminos y condiciones</string>
+    <string name="ya_tienes_cuenta">¿Ya tienes una cuenta? \n Inicia sesión</string>
+    <string name="finalizar">Finalizar</string>
 </resources>
