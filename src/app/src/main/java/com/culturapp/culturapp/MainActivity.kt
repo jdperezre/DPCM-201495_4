@@ -1,5 +1,6 @@
 package com.culturapp.culturapp
 
+import android.R
 import android.app.AlarmManager
 import android.app.DatePickerDialog
 import android.app.PendingIntent
@@ -20,7 +21,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.culturapp.culturapp.ui.favorites.FavoritesFragment
 import com.culturapp.culturapp.ui.home.HomeFragment
 import com.culturapp.culturapp.ui.notifications.NotificationsFragment
-import com.google.android.material.datepicker.MaterialDatePicker.Builder.datePicker
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.titlebar.*
 import java.util.*
@@ -32,6 +33,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val customTitleSupported =  requestWindowFeature(Window.FEATURE_CUSTOM_TITLE)
         setContentView(R.layout.activity_main)
+        //Initializing the ImageView
+        val imageView = R.id.imageView;
 
         if (customTitleSupported) {
             supportActionBar!!.hide()
@@ -52,7 +55,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         nav_view.setItemSelected(R.id.home)
+
+        Picasso
+            .get()
+            .load("https://urbancomunicacion.com/wp-content/uploads/2018/02/%C2%BFQui%C3%A9n-dise%C3%B1%C3%B3-el-la-imagen-del-icono-de-Android-urbancomunicacion-estudio-barcelona.jpg")
+            .into(imageView)
+
     }
+
+
 
     private fun showLateralMenu(){
         startActivity(Intent(this, LateralMenuActivity::class.java))
