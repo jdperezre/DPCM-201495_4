@@ -3,10 +3,10 @@ package com.culturapp.culturapp.models
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class Event (
+data class Event(
     @Expose
     @SerializedName("id")
-    val id: Integer,
+    val id: Int,
     @Expose
     @SerializedName("titulo")
     val titulo: String,
@@ -26,6 +26,9 @@ data class Event (
     @SerializedName("fecha_inicio")
     val fechaInicio: String,
     @Expose
+    @SerializedName("fecha_final")
+    val fechaFinal: String,
+    @Expose
     @SerializedName("hora")
     val hora: String,
     @Expose
@@ -33,8 +36,8 @@ data class Event (
     val imagen: String,
     @Expose
     @SerializedName("idCategoria")
-    val idCategoria: String,
+    val idCategoria: Int,
     @Expose
     @SerializedName("idEstado")
-    val idEstado: String
+    val idEstado: Int
 )

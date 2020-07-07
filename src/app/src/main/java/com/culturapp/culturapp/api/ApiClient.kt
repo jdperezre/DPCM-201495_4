@@ -9,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ApiClient {
 
     var BASE_URL:String="https://8074890b5490.ngrok.io/api/v1/"
+
     val getClient: ApiInterface
         get() {
 

@@ -42,7 +42,6 @@ class EventsActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-
         progressProgressDialog = ProgressDialog(this, 0)
         progressProgressDialog.run {
             setTitle("Cargando")

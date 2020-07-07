@@ -3,6 +3,8 @@ package com.culturapp.culturapp.controls
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
+import android.os.Build
+import android.text.Editable
 import android.text.InputType
 import android.text.method.ScrollingMovementMethod
 import android.util.AttributeSet
@@ -10,11 +12,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.LinearLayout
+import androidx.annotation.RequiresApi
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import com.culturapp.culturapp.R
 import kotlinx.android.synthetic.main.custom_edittext.view.*
 import kotlinx.android.synthetic.main.new_event.*
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class CustomEditText @JvmOverloads constructor(
@@ -30,9 +35,15 @@ class CustomEditText @JvmOverloads constructor(
         orientation = VERTICAL
     }
 
+    fun getText() : String {
+        return customEditText.text.toString()
+    }
+
     fun setText(str:String) {
         customEditText.setText(str)
     }
+
+
     fun SetInputType(type: Int){
         customEditText.inputType = type
 
@@ -69,7 +80,11 @@ class CustomEditText @JvmOverloads constructor(
 
             customEditText.setOnClickListener {
                 val dpd = DatePickerDialog(this.context,  DatePickerDialog.OnDateSetListener{ view, mYear, mMonth, mDay->
-                    customEditText.setText("$mDay/$mMonth/$mYear")
+
+                    val strMonth : String = if (mMonth > 9)  mMonth.toString() else "0$mMonth"
+                    val strDay : String = if (mDay > 9)  mDay.toString() else "0$mDay"
+
+                    customEditText.setText("$mYear-$strMonth-$strDay")
                 }, year, month, day)
                 dpd.show()
             }
@@ -85,7 +100,11 @@ class CustomEditText @JvmOverloads constructor(
 
             customEditText.setOnClickListener {
                 val dpd = TimePickerDialog(this.context,  TimePickerDialog.OnTimeSetListener{ view, mHour, mSecond->
-                    customEditText.setText("$mHour:$mSecond")
+
+                    val strHour : String = if (mHour > 9)  mHour.toString() else "0$mHour"
+                    val strSecond : String = if (mSecond > 9)  mSecond.toString() else "0$mSecond"
+
+                    customEditText.setText("$strHour:$strSecond")
                 }, hour, minute, false)
                 dpd.show()
             }

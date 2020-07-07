@@ -1,7 +1,7 @@
 package com.culturapp.culturapp.ui.events
 
 import android.app.Activity
-import android.app.DatePickerDialog
+import android.app.ProgressDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -11,18 +11,28 @@ import android.os.Build
 import android.os.Bundle
 import android.text.InputType
 import android.util.Base64
+import android.util.Log
 import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
 import com.culturapp.culturapp.R
+import com.culturapp.culturapp.adapters.EventListAdapter
+import com.culturapp.culturapp.api.ApiClient
+import com.culturapp.culturapp.models.Event
+import kotlinx.android.synthetic.main.events.*
 import kotlinx.android.synthetic.main.new_event.*
 import kotlinx.android.synthetic.main.titlebar_events.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.*
-import java.util.*
 
 
 class NewEventActivity : AppCompatActivity() {
+    lateinit var progressProgressDialog: ProgressDialog
     private lateinit var selectedImage: Bitmap
+    private lateinit var encodedImage: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,12 +45,30 @@ class NewEventActivity : AppCompatActivity() {
             window.setBackgroundDrawableResource(R.color.backgroundWindow)
         }
 
-        btnBack.setOnClickListener{onBackPressed()}
 
         initControls()
+        setupEvents()
 
         //Image
         initImageView()
+    }
+
+    private fun setupEvents() {
+        btnBack.setOnClickListener{
+            onBackPressed()
+        }
+        button.setOnClickListener {
+
+            progressProgressDialog = ProgressDialog(this, 0)
+            progressProgressDialog.run {
+                setTitle("Cargando")
+                setContentView(R.layout.progress)
+                setCancelable(false)
+                show()
+            }
+
+            saveData()
+        }
     }
 
     override fun onBackPressed() {
@@ -73,6 +101,46 @@ class NewEventActivity : AppCompatActivity() {
         editTextTel.SetInputType(InputType.TYPE_CLASS_PHONE)
         editTextTel.SetHint(R.string.hint_telefono_contacto);
     }
+
+
+    private fun saveData() {
+        val event: Event = Event(0,
+            editTextTitle.getText(),
+            editTextContact.getText(),
+            editTextDescription.getText(),
+            editTextTel.getText(),
+            editTextLocation.getText(),
+            editTextDate.getText(),
+            editTextDate.getText(),
+            editTextHour.getText(),
+            "encodedImage",
+            2,
+            1
+        )
+        val call: Call<Event?> = ApiClient.getClient.createEvent(event)!!
+        call.enqueue(object : Callback<Event?> {
+
+            override fun onResponse(call: Call<Event?>, response: Response<Event?>) {
+                if(response.isSuccessful) {
+                    progressProgressDialog.hide()
+                    Toast.makeText(this@NewEventActivity, "Evento guardado", Toast.LENGTH_SHORT).show()
+                    onBackPressed()
+                }
+                else{
+                    progressProgressDialog.hide()
+                    Log.d("Error Service", response.errorBody()?.string())
+                    Toast.makeText(this@NewEventActivity, "Ha ocurrido un error inesperado", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<Event?>, t: Throwable) {
+                progressProgressDialog.hide()
+                Toast.makeText(this@NewEventActivity, "Ha ocurrido un error inesperado. Inténtalo mas tarde", Toast.LENGTH_SHORT).show()
+            }
+
+        })
+    }
+
 
     private fun initImageView() {
         imgEvent.setOnClickListener {
@@ -130,7 +198,7 @@ class NewEventActivity : AppCompatActivity() {
             val imageUri: Uri? = data!!.data
             val imageStream: InputStream? = contentResolver.openInputStream(imageUri!!)
             selectedImage = BitmapFactory.decodeStream(imageStream)
-            val encodedImage: String = encodeImage(selectedImage)!!
+            encodedImage = encodeImage(selectedImage)!!
 
             imgEvent.setImageBitmap(selectedImage)
         }
@@ -159,4 +227,6 @@ class NewEventActivity : AppCompatActivity() {
         //Base64.de
         return Base64.encodeToString(b, Base64.DEFAULT)
     }
+
+
 }
