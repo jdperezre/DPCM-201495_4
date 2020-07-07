@@ -1,5 +1,6 @@
 package com.culturapp.culturapp.adapters
 
+import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,7 @@ import androidx.fragment.app.FragmentActivity
 import com.culturapp.culturapp.R
 import com.culturapp.culturapp.models.Event
 
-class EventListAdapter(private var activity: FragmentActivity, private var items: List<Event>): BaseAdapter() {
+class EventListAdapter(private var activity: Activity, private var items: List<Event>): BaseAdapter() {
 
     private class ViewHolder(row: View?) {
         var txtTitle: TextView? = null
