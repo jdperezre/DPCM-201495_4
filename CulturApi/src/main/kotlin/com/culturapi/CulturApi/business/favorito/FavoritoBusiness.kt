@@ -1,13 +1,14 @@
 package com.culturapi.CulturApi.business.favorito
 
+import com.culturapi.CulturApi.dao.EventoRepository
 import com.culturapi.CulturApi.dao.FavoritoRepository
 import com.culturapi.CulturApi.exception.BusinessException
 import com.culturapi.CulturApi.exception.NotFoundException
 import com.culturapi.CulturApi.model.Favorito
-import com.google.gson.Gson
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.util.*
+import kotlin.collections.ArrayList
 
 @Service
 class FavoritoBusiness: IFavoritoBusiness {
@@ -15,8 +16,13 @@ class FavoritoBusiness: IFavoritoBusiness {
     @Autowired
     val favoritoRepository: FavoritoRepository? = null
 
-    override fun load(idUsuario: Long): List<Favorito> {
+    @Autowired
+    val eventoRepository : EventoRepository? = null
+
+    override fun load(idUsuario: Long): List<Any> {
         val op: List<Favorito>
+        var response: List<Any> = ArrayList()
+
         try {
             op = favoritoRepository!!.findByIdUsuario(idUsuario)
         }catch (e:Exception){
@@ -26,7 +32,12 @@ class FavoritoBusiness: IFavoritoBusiness {
         if(op.count() == 0 ){
             throw NotFoundException("No se encuentran favoritos para este usuario = $idUsuario")
         }
-        return op
+        else{
+            for(evento in op) {
+               response += eventoRepository!!.findById(evento.idEvento)
+            }
+        }
+        return response
     }
 
 

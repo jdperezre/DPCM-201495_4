@@ -6,7 +6,7 @@ import com.culturapi.CulturApi.model.Usuario
 import java.util.*
 
 interface IFavoritoBusiness {
-    fun load(idUsuario: Long): List<Favorito>
+    fun load(idUsuario: Long): List<Any>
     fun save(favorito: Favorito): Favorito
     fun remove(idFavorito: Long)
 }
