@@ -57,10 +57,10 @@ class MainActivity : AppCompatActivity() {
 
         nav_view.setItemSelected(R.id.home)
 
-        Picasso
+        /*Picasso
             .get()
             .load("https://urbancomunicacion.com/wp-content/uploads/2018/02/%C2%BFQui%C3%A9n-dise%C3%B1%C3%B3-el-la-imagen-del-icono-de-Android-urbancomunicacion-estudio-barcelona.jpg")
-            .into(imageView)
+            .into(imageView)*/
 
     }
 

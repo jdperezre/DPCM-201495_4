@@ -1,15 +1,28 @@
 package com.culturapp.culturapp.ui.home
 
+import android.app.ProgressDialog
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.culturapp.culturapp.R
 import com.culturapp.culturapp.adapters.EventListHomeAdapter
+import com.culturapp.culturapp.api.ApiClient
+import com.culturapp.culturapp.models.Event
 import kotlinx.android.synthetic.main.fragment_home.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import kotlin.concurrent.thread
 
 class HomeFragment : Fragment() {
+
+    lateinit var progressProgressDialog: ProgressDialog
+    var dataList = ArrayList<Event>()
+    lateinit var adapter: EventListHomeAdapter
+
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -21,27 +34,35 @@ class HomeFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        var adapter = EventListHomeAdapter(this.requireActivity(), generateData())
 
-        events_listView?.adapter = adapter
-        adapter?.notifyDataSetChanged()
-    }
-
-    fun generateData(): ArrayList<EventDto> {
-        var result = ArrayList<EventDto>()
-
-        for (i in 0..9) {
-            var dto: EventDto = EventDto((i + 1).toString() + " Titulo Evento", "Mayo " +(i + 1).toString() + " de 2020", "Centro de espectáculos salón " + (i + 1).toString())
-            result.add(dto)
+        progressProgressDialog = ProgressDialog(this.requireContext(), 0)
+        progressProgressDialog.run {
+            setTitle("Cargando")
+            setContentView(R.layout.progress)
+            setCancelable(false)
+            show()
         }
+        getData()
 
-        return result
     }
-}
 
-class EventDto(title: String, date: String, location: String
-) {
-    var title = title
-    var date =  date
-    var location =  location
+    private fun getData() {
+        val call: Call<List<Event>> = ApiClient.getClient.getEvents()
+        call.enqueue(object : Callback<List<Event>> {
+
+            override fun onResponse(call: Call<List<Event>>?, response: Response<List<Event>>?) {
+                progressProgressDialog.dismiss()
+                dataList.addAll(response!!.body()!!)
+                adapter = EventListHomeAdapter(this@HomeFragment.requireActivity(), response!!.body()!!)
+
+                events_listView.adapter = adapter
+                adapter.notifyDataSetChanged()
+            }
+
+            override fun onFailure(call: Call<List<Event>>?, t: Throwable?) {
+                progressProgressDialog.dismiss()
+            }
+
+        })
+    }
 }

@@ -26,22 +26,10 @@ class FavoritesFragment : Fragment() {
         adapter?.notifyDataSetChanged()
     }
 
-    fun generateData(): ArrayList<EventDto> {
-        var result = ArrayList<EventDto>()
 
-        for (i in 0..9) {
-            var dto: EventDto = EventDto((i + 1).toString() + " Titulo Evento", "Mayo " +(i + 1).toString() + " de 2020", "Centro de espectáculos salón " + (i + 1).toString())
-            result.add(dto)
-        }
 
-        return result
-    }
-}
 
-class EventDto(title: String, date: String, location: String) {
-    var title = title
-    var date =  date
-    var location =  location
+
 }
 
 
