@@ -8,9 +8,9 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import com.culturapp.culturapp.R
-import com.culturapp.culturapp.ui.favorites.EventDto
+import com.culturapp.culturapp.models.Event
 
-class EventListAdapter(private var activity: FragmentActivity, private var items: ArrayList<com.culturapp.culturapp.ui.favorites.EventDto>): BaseAdapter() {
+class EventListAdapter(private var activity: FragmentActivity, private var items: List<Event>): BaseAdapter() {
 
     private class ViewHolder(row: View?) {
         var txtTitle: TextView? = null
@@ -38,14 +38,14 @@ class EventListAdapter(private var activity: FragmentActivity, private var items
         }
 
         var eventDto = items[position]
-        viewHolder.txtTitle?.text = eventDto.title
-        viewHolder.txtDate?.text = eventDto.date
-        viewHolder.txtLocation?.text = eventDto.location
+        viewHolder.txtTitle?.text = eventDto.titulo
+        viewHolder.txtDate?.text = eventDto.fechaInicio
+        viewHolder.txtLocation?.text = eventDto.direccion
 
         return view as View
     }
 
-    override fun getItem(i: Int): EventDto {
+    override fun getItem(i: Int): Event {
         return items[i]
     }
 
