@@ -1,11 +1,9 @@
 package com.culturapi.CulturApi.model
 
 
-import com.cloudinary.StoredFile
 import java.time.LocalDate
 import java.time.LocalTime
 import javax.persistence.*
-import java.util.Date;
 
 
 @Entity
@@ -29,29 +27,3 @@ data class Evento(
     var id:Long = 0
 }
 
-@Entity(name = "photos")
-class Photo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    var id: Long? = null
-
-    @Basic
-    var title: String? = null
-
-    @Basic
-    var image: String? = null
-
-    @Basic
-    var createdAt: Date = Date()
-
-    var upload: StoredFile
-        get() {
-            val file = StoredFile()
-            file.preloadedFile = image
-            return file
-        }
-        set(file) {
-            image = file.preloadedFile
-        }
-
-}

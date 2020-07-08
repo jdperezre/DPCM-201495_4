@@ -18,7 +18,7 @@ class RolRestController {
     val rolBusiness: IRolBusiness? = null
 
     // Lista todos los roles
-    @GetMapping("")
+    @GetMapping("all")
     fun list(): ResponseEntity<List<Rol>> {
         return try {
             ResponseEntity(rolBusiness!!.list(), HttpStatus.OK)

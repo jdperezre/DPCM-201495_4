@@ -18,7 +18,7 @@ class EstadoRestController {
     val estadoBusiness: IEstadoBusiness? = null
 
     // Lista todos los estados
-    @GetMapping("")
+    @GetMapping("all")
     fun list(): ResponseEntity<List<Estado>> {
         return try {
             ResponseEntity(estadoBusiness!!.list(), HttpStatus.OK)
