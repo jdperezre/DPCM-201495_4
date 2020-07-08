@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
+import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import com.culturapp.culturapp.R
 import com.culturapp.culturapp.adapters.EventListAdapter
@@ -69,6 +70,12 @@ class EventsActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<List<Event>>?, response: Response<List<Event>>?) {
                 progressProgressDialog.dismiss()
+
+                if(response!!.body().isNullOrEmpty()){
+                    Toast.makeText(this@EventsActivity, "No se encontraron resultados", Toast.LENGTH_LONG).show()
+                    return
+                }
+
                 dataList.addAll(response!!.body()!!)
                 adapter = EventListAdapter(this@EventsActivity as FragmentActivity, response!!.body()!!)
 
