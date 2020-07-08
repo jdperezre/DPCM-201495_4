@@ -117,10 +117,10 @@ class NewEventActivity : AppCompatActivity() {
             2,
             1
         )
-        val call: Call<Event?> = ApiClient.getClient.createEvent(event)!!
-        call.enqueue(object : Callback<Event?> {
+        val call: Call<String> = ApiClient.getClient.createEvent(event)!!
+        call.enqueue(object : Callback<String> {
 
-            override fun onResponse(call: Call<Event?>, response: Response<Event?>) {
+            override fun onResponse(call: Call<String>, response: Response<String>) {
                 if(response.isSuccessful) {
                     progressProgressDialog.hide()
                     Toast.makeText(this@NewEventActivity, "Evento guardado", Toast.LENGTH_SHORT).show()
@@ -133,9 +133,17 @@ class NewEventActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<Event?>, t: Throwable) {
+            override fun onFailure(call: Call<String>, t: Throwable) {
                 progressProgressDialog.hide()
-                Toast.makeText(this@NewEventActivity, "Ha ocurrido un error inesperado. Inténtalo mas tarde", Toast.LENGTH_SHORT).show()
+
+                if(!call.isCanceled && call.isExecuted){
+                    Toast.makeText(this@NewEventActivity, "Evento guardado", Toast.LENGTH_SHORT).show()
+                    onBackPressed()
+                }else{
+                    Toast.makeText(this@NewEventActivity, "Ha ocurrido un error inesperado. Inténtalo mas tarde", Toast.LENGTH_SHORT).show()
+                }
+
+
             }
 
         })

@@ -12,6 +12,6 @@ interface ApiInterface {
     fun getEvents(): Call<List<Event>>
 
     @POST("eventos")
-    fun createEvent(@Body login: Event?): Call<Event?>?
+    fun createEvent(@Body login: Event?): Call<String>?
 
 }
