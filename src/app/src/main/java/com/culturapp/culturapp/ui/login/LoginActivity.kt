@@ -6,19 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
 import android.view.Window
-import android.widget.Toast
-import androidx.fragment.app.FragmentActivity
 import com.culturapp.culturapp.R
-import com.culturapp.culturapp.adapters.EventListAdapter
 import com.culturapp.culturapp.api.ApiClient
-import com.culturapp.culturapp.api.request.LoginRequest
-import com.culturapp.culturapp.api.response.LoginResponse
-import com.culturapp.culturapp.authentication.SessionManager
-import com.culturapp.culturapp.models.Event
-import com.culturapp.culturapp.models.User
-import kotlinx.android.synthetic.main.events.*
 import kotlinx.android.synthetic.main.login.*
 import kotlinx.android.synthetic.main.titlebar_events.*
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,7 +18,6 @@ import retrofit2.Response
 class LoginActivity : AppCompatActivity() {
 
     lateinit var progressProgressDialog: ProgressDialog
-    private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,27 +76,30 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login(){
-        var data: String = "loginRequest/{'email':'Juanperz211@gmail.com','contrasena':'Juan123**'}"
+        //var data: String = ('{"email":"Juanperz211@gmail.com","contrasena":"Juan123**"}').toString()
 
 
-       val call : Call<String?> = ApiClient.getClient.login(data)!!
-            call.enqueue(object : Callback<String?>{
-                override fun onResponse(call: Call<String?>, response: Response<String?>) {
-                    val loginResponse = response.body()
 
-                    if (loginResponse != null) {
-                        println("Éxitoso!!!")
-                    } else {
-                        println("Error al autenticarse")
-                    }
+        var data = JSONObject("""{"email":"Juanperz211@gmail.com","contrasena":"Juan123**"}""")
+
+        val call : Call<String>? = ApiClient.getClient.login(data)
+        call?.enqueue(object : Callback<String?>{
+            override fun onResponse(call: Call<String?>, response: Response<String?>) {
+                val loginResponse = response.body()
+
+                if (loginResponse != null) {
+                    println("Éxitoso!!!")
+                } else {
+                    println("Error al autenticarse")
                 }
+            }
 
-                override fun onFailure(call: Call<String?>, t: Throwable) {
-                    println("Falló>>> ")
-                }
+            override fun onFailure(call: Call<String?>, t: Throwable) {
+                println("Falló>>> ")
+            }
 
 
-            })
+        })
     }
 
 

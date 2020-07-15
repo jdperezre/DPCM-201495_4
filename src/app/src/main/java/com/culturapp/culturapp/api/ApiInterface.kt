@@ -1,7 +1,7 @@
 package com.culturapp.culturapp.api
 
 import com.culturapp.culturapp.models.Event
-import com.culturapp.culturapp.models.User
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.http.*
@@ -24,8 +24,11 @@ interface ApiInterface {
     fun login(
         @Query("address") address: String) : Call<String?>?*/
 
-    @GET("")
-    fun login(@Url url : String ) : Call<String?>
+//    @GET("")
+////    fun login(@Url url : String ) : Call<String?>
 
+
+    @GET("loginRequest/{data}")
+    fun login(@Path("data", encoded = true) data: JSONObject): Call<String>?
 
 }
