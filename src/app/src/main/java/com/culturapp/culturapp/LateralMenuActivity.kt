@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.view.Window
 import com.culturapp.culturapp.ui.events.EventsActivity
 import com.culturapp.culturapp.ui.login.LoginActivity
+import com.culturapp.culturapp.ui.profile.ProfileActivity
 import kotlinx.android.synthetic.main.lateral_menu.*
 
 class LateralMenuActivity : AppCompatActivity() {
@@ -44,7 +45,9 @@ class LateralMenuActivity : AppCompatActivity() {
     }
 
     private fun showProfile(){
-
+        startActivity(Intent(this, ProfileActivity::class.java))
+        finish()
+        overridePendingTransition(R.anim.leftin, R.anim.leftout)
     }
 
     private fun showEvents(){

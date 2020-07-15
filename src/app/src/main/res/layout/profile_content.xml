@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#283F4D"
+    android:shadowColor="#00000029"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:paddingVertical="10dp"
+    tools:showIn="@layout/profile">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="409dp"
+        android:layout_height="268dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="90dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/layout_contenedor"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <com.culturapp.culturapp.controls.CustomEditText
+                android:id="@+id/editTextCellphone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.culturapp.culturapp.controls.CustomEditText
+                android:id="@+id/editTextBirthDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.culturapp.culturapp.controls.CustomEditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.culturapp.culturapp.controls.CustomEditText
+                android:id="@+id/editTextState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
