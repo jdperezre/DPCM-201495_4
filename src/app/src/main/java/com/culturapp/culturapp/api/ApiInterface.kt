@@ -1,10 +1,10 @@
 package com.culturapp.culturapp.api
 
 import com.culturapp.culturapp.models.Event
+import com.culturapp.culturapp.models.User
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.Callback
+import retrofit2.http.*
 
 interface ApiInterface {
 
@@ -13,5 +13,19 @@ interface ApiInterface {
 
     @POST("eventos")
     fun createEvent(@Body login: Event?): Call<String>?
+
+
+/*    @GET("loginRequest/{data}")
+    fun login(
+        @Path("data") data: String
+        ): Call<User>?*/
+
+ /*   @GET("loginRequest/")
+    fun login(
+        @Query("address") address: String) : Call<String?>?*/
+
+    @GET("")
+    fun login(@Url url : String ) : Call<String?>
+
 
 }
