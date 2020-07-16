@@ -59,8 +59,8 @@ class HomeFragment : Fragment() {
                     return
                 }
 
-                dataList.addAll(response!!.body()!!)
-                adapter = EventListHomeAdapter(this@HomeFragment.requireActivity(), response!!.body()!!)
+                dataList.addAll(response.body()!!)
+                adapter = EventListHomeAdapter(this@HomeFragment.requireActivity(), response.body()!!)
 
                 events_listView.adapter = adapter
                 adapter.notifyDataSetChanged()

@@ -58,8 +58,8 @@ class FavoritesFragment : Fragment() {
                     return
                 }
 
-                dataList.addAll(response!!.body()!!)
-                adapter = EventListAdapter(this@FavoritesFragment.requireActivity(), response!!.body()!!)
+                dataList.addAll(response.body()!!)
+                adapter = EventListAdapter(this@FavoritesFragment.requireActivity(), response.body()!!)
 
                 events_favorites_listView.adapter = adapter
                 adapter.notifyDataSetChanged()

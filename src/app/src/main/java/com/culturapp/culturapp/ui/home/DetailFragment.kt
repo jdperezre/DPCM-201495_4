@@ -132,7 +132,7 @@ class DetailFragment(
     }
 
 
-    public fun createAlarm(milliseconds: Long){
+    fun createAlarm(milliseconds: Long){
         alarmManager = this.requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, Receiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
@@ -140,7 +140,7 @@ class DetailFragment(
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + milliseconds, pendingIntent)
     }
 
-    public fun updateAlarm(milliseconds: Long){
+    fun updateAlarm(milliseconds: Long){
         alarmManager = this.requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, Receiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
@@ -148,7 +148,7 @@ class DetailFragment(
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + milliseconds, pendingIntent)
     }
 
-    public fun cancelAlarm(){
+    fun cancelAlarm(){
         alarmManager = this.requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, Receiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)

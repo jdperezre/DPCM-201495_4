@@ -31,7 +31,7 @@ class EventsActivity : AppCompatActivity() {
 
         if (customTitleSupported) {
             supportActionBar!!.hide()
-            window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar_events);
+            window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar_events)
             window.setBackgroundDrawableResource(R.color.backgroundWindow)
         }
 
@@ -55,7 +55,7 @@ class EventsActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        overridePendingTransition(R.anim.rigthin, R.anim.rigthout);
+        overridePendingTransition(R.anim.rigthin, R.anim.rigthout)
     }
 
     private fun showAddEvent() {
@@ -76,8 +76,8 @@ class EventsActivity : AppCompatActivity() {
                     return
                 }
 
-                dataList.addAll(response!!.body()!!)
-                adapter = EventListAdapter(this@EventsActivity as FragmentActivity, response!!.body()!!)
+                dataList.addAll(response.body()!!)
+                adapter = EventListAdapter(this@EventsActivity as FragmentActivity, response.body()!!)
 
                 events_listView.adapter = adapter
                 adapter.notifyDataSetChanged()

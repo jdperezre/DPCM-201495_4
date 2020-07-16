@@ -36,7 +36,7 @@ class EventListAdapter(private var activity: Activity, private var items: List<E
         val view: View?
         val viewHolder: ViewHolder
         if (convertView == null) {
-            val inflater = activity?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            val inflater = activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             view = inflater.inflate(R.layout.event_list_row, null)
             viewHolder = ViewHolder(view)
             view?.tag = viewHolder
@@ -119,7 +119,7 @@ class EventListAdapter(private var activity: Activity, private var items: List<E
     }
 
 
-    public fun createAlarm(milliseconds: Long){
+    fun createAlarm(milliseconds: Long){
         alarmManager = activity.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(activity, Receiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(activity, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
@@ -127,7 +127,7 @@ class EventListAdapter(private var activity: Activity, private var items: List<E
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + milliseconds, pendingIntent)
     }
 
-    public fun updateAlarm(milliseconds: Long){
+    fun updateAlarm(milliseconds: Long){
         alarmManager = activity.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(activity, Receiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(activity, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
@@ -135,7 +135,7 @@ class EventListAdapter(private var activity: Activity, private var items: List<E
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + milliseconds, pendingIntent)
     }
 
-    public fun cancelAlarm(){
+    fun cancelAlarm(){
         alarmManager = activity.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(activity, Receiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(activity, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)

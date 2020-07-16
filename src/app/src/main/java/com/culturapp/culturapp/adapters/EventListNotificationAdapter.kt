@@ -33,7 +33,7 @@ class EventListNotificationAdapter(private var activity: FragmentActivity, priva
         val view: View?
         val viewHolder: ViewHolder
         if (convertView == null) {
-            val inflater = activity?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            val inflater = activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             view = inflater.inflate(R.layout.event_alarm_list_row, null)
             viewHolder = ViewHolder(view)
             view?.tag = viewHolder

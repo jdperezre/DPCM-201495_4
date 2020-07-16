@@ -60,7 +60,9 @@
     <string name="hint_apellidos">Surname</string>
     <string name="hint_celular">Cellular number</string>
     <string name="hint_fecha_nacimiento">Date of birth</string>
-    <string name="terminos_y_condiciones">I have read and accept the \nTerms and conditions</string>
+    <string name="terminos_y_condiciones">I have read and accept the</string>
+    <string name="terminos_y_condiciones2">Terms and conditions</string>
+    <string name="terminos_y_condiciones3">The user agrees to read the terms and conditions set forth herein, prior to downloading the application, therefore, in the event of carrying out the installation, it is understood that he has full knowledge of this document and the consequent acceptance of all of its stipulations.The User acknowledges that the entry of their personal information, and the data contained in the application at their disposal regarding the active products of the University, are carried out voluntarily, by those who choose to access this application in Colombia or from outside of the national territory, they do it on their own initiative and are responsible for compliance with local laws, to the extent that such laws are applicable in their corresponding country. In case it is accessed by minors, they must have the supervision of an adult at all times from the download and during the use of the application, in the event that this condition is not met, we thank you not to use of the application.</string>
     <string name="ya_tienes_cuenta">Already have an account? \n Sign in</string>
     <string name="finalizar">Finish</string>
     <string name="hint_codigo">Code</string>
@@ -91,5 +93,13 @@
     <string name="recovery_password_legend_2">We have sent a \nsecurity code to your email. \nEnter the security code</string>
     <string name="register_legend">Enter your personal \ninformation</string>
     <string name="menu">Menu</string>
+
+
+    <!--    terms and conditions -->
+    <string name="title_terms">Términos y condiciones</string>
+    <string name="text_terms">En este documento se establecen los Términos y Condiciones que regulan el uso de la aplicación móvil de la Universidad Nacional Abierta y a Distancia titulada CulturApp.</string>
+    <string name="text_terms2">
+        Al acceder a la aplicación y explorar el contenido del mismo, Usted acepta, sin reserva
+        ni limitación alguna, los presentes términos y condiciones.</string>
 
 </resources>

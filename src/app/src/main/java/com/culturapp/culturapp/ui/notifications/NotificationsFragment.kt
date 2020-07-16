@@ -57,8 +57,8 @@ class NotificationsFragment : Fragment() {
                     return
                 }
 
-                dataList.addAll(response!!.body()!!)
-                adapter = EventListNotificationAdapter(this@NotificationsFragment.requireActivity(), response!!.body()!!)
+                dataList.addAll(response.body()!!)
+                adapter = EventListNotificationAdapter(this@NotificationsFragment.requireActivity(), response.body()!!)
 
                 events_notification_listView.adapter = adapter
                 adapter.notifyDataSetChanged()

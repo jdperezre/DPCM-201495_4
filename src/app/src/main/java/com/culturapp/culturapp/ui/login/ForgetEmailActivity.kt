@@ -19,7 +19,7 @@ class ForgetEmailActivity : AppCompatActivity() {
 
         if (customTitleSupported) {
             supportActionBar!!.hide()
-            window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar_basic);
+            window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar_basic)
             window.setBackgroundDrawableResource(R.color.backgroundWindow)
         }
 
@@ -49,6 +49,6 @@ class ForgetEmailActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        overridePendingTransition(R.anim.rigthin, R.anim.rigthout);
+        overridePendingTransition(R.anim.rigthin, R.anim.rigthout)
     }
 }

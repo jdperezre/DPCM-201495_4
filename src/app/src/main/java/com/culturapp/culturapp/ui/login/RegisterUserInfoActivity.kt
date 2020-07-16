@@ -20,7 +20,7 @@ class RegisterUserInfoActivity : AppCompatActivity() {
 
         if (customTitleSupported) {
             supportActionBar!!.hide()
-            window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar_basic);
+            window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar_basic)
             window.setBackgroundDrawableResource(R.color.backgroundWindow)
         }
 
@@ -39,7 +39,7 @@ class RegisterUserInfoActivity : AppCompatActivity() {
         editTextCelular.SetInputType(InputType.TYPE_CLASS_PHONE)
 
         editTextFechaNacimiento.SetInputType(InputType.TYPE_CLASS_DATETIME or InputType.TYPE_DATETIME_VARIATION_DATE)
-        editTextFechaNacimiento.SetHint(R.string.hint_fecha_nacimiento);
+        editTextFechaNacimiento.SetHint(R.string.hint_fecha_nacimiento)
         editTextFechaNacimiento.SetIcon(R.drawable.ic_calendar_input)
     }
 
@@ -61,6 +61,6 @@ class RegisterUserInfoActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        overridePendingTransition(R.anim.rigthin, R.anim.rigthout);
+        overridePendingTransition(R.anim.rigthin, R.anim.rigthout)
     }
 }

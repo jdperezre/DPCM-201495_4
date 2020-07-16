@@ -17,11 +17,6 @@ class SplashActivity : AppCompatActivity() {
         }, 5000)
     }
 
-    override fun onResume() {
-        super.onResume()
-
-    }
-
     fun NextScreen(){
         startActivity(Intent(this,MainActivity::class.java))
         finish()

@@ -18,7 +18,7 @@ class ProfileActivity : AppCompatActivity() {
 
         if (customTitleSupported) {
             supportActionBar!!.hide()
-            window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar_basic);
+            window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar_basic)
             window.setBackgroundDrawableResource(R.color.backgroundWindow)
         }
 
@@ -29,23 +29,23 @@ class ProfileActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        overridePendingTransition(R.anim.rigthin, R.anim.rigthout);
+        overridePendingTransition(R.anim.rigthin, R.anim.rigthout)
     }
 
     private fun initControls() {
 
         editTextCellphone.SetInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_NORMAL)
-        editTextCellphone.SetHint(R.string.hint_cellphone);
+        editTextCellphone.SetHint(R.string.hint_cellphone)
 
         editTextBirthDate.SetInputType(InputType.TYPE_CLASS_DATETIME or InputType.TYPE_DATETIME_VARIATION_DATE)
-        editTextBirthDate.SetHint(R.string.hint_birth_date);
+        editTextBirthDate.SetHint(R.string.hint_birth_date)
         editTextBirthDate.SetIcon(R.drawable.ic_calendar_input)
 
         editTextPassword.SetInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD)
-        editTextPassword.SetHint(R.string.hint_password);
+        editTextPassword.SetHint(R.string.hint_password)
 
         editTextState.SetInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD)
-        editTextState.SetHint(R.string.hint_state);
+        editTextState.SetHint(R.string.hint_state)
 
     }
 }

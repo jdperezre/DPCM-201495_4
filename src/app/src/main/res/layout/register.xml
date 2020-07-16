@@ -104,7 +104,6 @@
             android:layout_marginTop="25dp"
             android:clickable="true"
             android:fontFamily="@font/roboto_regular"
-            android:onClick="onClick"
             android:text="@string/terminos_y_condiciones"
             android:textColor="@color/white"
             android:textSize="16dp"></com.google.android.material.checkbox.MaterialCheckBox>

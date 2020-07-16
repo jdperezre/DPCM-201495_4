@@ -58,13 +58,13 @@ class CustomEditText @JvmOverloads constructor(
             customEditText.layoutParams = params
 
             customEditText.isSingleLine = false
-            customEditText.imeOptions = EditorInfo.IME_FLAG_NO_ENTER_ACTION;
-            customEditText.setLines(5);
-            customEditText.maxLines = 50;
-            customEditText.minLines = 5;
-            customEditText.isVerticalScrollBarEnabled = true;
-            customEditText.movementMethod = ScrollingMovementMethod.getInstance();
-            customEditText.scrollBarStyle = View.SCROLLBARS_INSIDE_INSET;
+            customEditText.imeOptions = EditorInfo.IME_FLAG_NO_ENTER_ACTION
+            customEditText.setLines(5)
+            customEditText.maxLines = 50
+            customEditText.minLines = 5
+            customEditText.isVerticalScrollBarEnabled = true
+            customEditText.movementMethod = ScrollingMovementMethod.getInstance()
+            customEditText.scrollBarStyle = View.SCROLLBARS_INSIDE_INSET
 
             customEditText.isElegantTextHeight = true
         }

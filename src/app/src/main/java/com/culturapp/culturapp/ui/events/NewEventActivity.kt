@@ -38,7 +38,7 @@ class NewEventActivity : AppCompatActivity() {
 
         if (customTitleSupported) {
             supportActionBar!!.hide()
-            window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar_basic);
+            window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar_basic)
             window.setBackgroundDrawableResource(R.color.backgroundWindow)
         }
 
@@ -70,33 +70,33 @@ class NewEventActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        overridePendingTransition(R.anim.rigthin, R.anim.rigthout);
+        overridePendingTransition(R.anim.rigthin, R.anim.rigthout)
     }
 
     private fun initControls() {
 
         editTextTitle.SetInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_NORMAL)
-        editTextTitle.SetHint(R.string.hint_titulo);
+        editTextTitle.SetHint(R.string.hint_titulo)
 
         editTextDescription.SetInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE)
-        editTextDescription.SetHint(R.string.hint_descripcion);
+        editTextDescription.SetHint(R.string.hint_descripcion)
 
         editTextDate.SetInputType(InputType.TYPE_CLASS_DATETIME or InputType.TYPE_DATETIME_VARIATION_DATE)
-        editTextDate.SetHint(R.string.hint_fecha);
+        editTextDate.SetHint(R.string.hint_fecha)
         editTextDate.SetIcon(R.drawable.ic_calendar_input)
 
         editTextHour.SetInputType(InputType.TYPE_CLASS_DATETIME or InputType.TYPE_DATETIME_VARIATION_TIME)
-        editTextHour.SetHint(R.string.hint_hora);
+        editTextHour.SetHint(R.string.hint_hora)
         editTextHour.SetIcon(R.drawable.ic_clock_input)
 
         editTextLocation.SetInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_NORMAL)
-        editTextLocation.SetHint(R.string.hint_lugar);
+        editTextLocation.SetHint(R.string.hint_lugar)
 
         editTextContact.SetInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_NORMAL)
-        editTextContact.SetHint(R.string.hint_contacto);
+        editTextContact.SetHint(R.string.hint_contacto)
 
         editTextTel.SetInputType(InputType.TYPE_CLASS_PHONE)
-        editTextTel.SetHint(R.string.hint_telefono_contacto);
+        editTextTel.SetHint(R.string.hint_telefono_contacto)
     }
 
 
@@ -174,8 +174,8 @@ class NewEventActivity : AppCompatActivity() {
     }
 
     companion object{
-        private val IMAGE_PICK_CODE = 1000;
-        private val PERMISSION_CODE = 1001;
+        private val IMAGE_PICK_CODE = 1000
+        private val PERMISSION_CODE = 1001
 
     }
 

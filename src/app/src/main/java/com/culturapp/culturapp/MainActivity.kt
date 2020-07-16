@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         if (customTitleSupported) {
             supportActionBar!!.hide()
-            window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar);
+            window.setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar)
             window.setBackgroundDrawableResource(R.color.backgroundWindow)
         }
 
@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.doTransaction{remove(fragment)}
     }
 
-    public fun goToDetalEvent(eventDto: Event){
+    fun goToDetalEvent(eventDto: Event){
         detailFragment = DetailFragment(eventDto)
         isDetail = true
         addFragment(detailFragment!!)
