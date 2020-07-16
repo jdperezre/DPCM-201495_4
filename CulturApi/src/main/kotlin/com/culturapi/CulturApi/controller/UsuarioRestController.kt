@@ -20,7 +20,7 @@ class UsuarioRestController {
     val usuarioBusiness: IUsuarioBusiness? = null
 
     // Lista todos los usuarios
-    @GetMapping("")
+    @GetMapping("all")
     fun list(): ResponseEntity<List<Usuario>> {
         return try {
             ResponseEntity(usuarioBusiness!!.list(), HttpStatus.OK)

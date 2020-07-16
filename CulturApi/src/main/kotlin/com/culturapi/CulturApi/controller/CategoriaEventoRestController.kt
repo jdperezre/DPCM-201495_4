@@ -21,7 +21,7 @@ class CategoriaEventoRestController {
     val categoriaEventoBusiness: ICategoriaEventoBusiness? = null
 
     // Lista todas las Categorias
-    @GetMapping("")
+    @GetMapping("all")
     fun list(): ResponseEntity<List<CategoriaEvento>> {
         return try {
             ResponseEntity(categoriaEventoBusiness!!.list(), HttpStatus.OK)

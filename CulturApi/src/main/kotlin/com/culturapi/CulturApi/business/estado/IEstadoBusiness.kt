@@ -4,5 +4,5 @@ import com.culturapi.CulturApi.model.Estado
 
 interface IEstadoBusiness {
     fun list(): MutableList<Estado>?
-    fun save(categoriaEvento: Estado): Estado
+    fun save(estado: Estado): Estado
 }

@@ -56,6 +56,7 @@ class EventoBusiness: IEventoBusiness {
             op = eventoRepository!!.findById(idEvento)
         } catch (e: Exception) {
             throw BusinessException(e.message)
+
         }
 
         if (!op.isPresent){

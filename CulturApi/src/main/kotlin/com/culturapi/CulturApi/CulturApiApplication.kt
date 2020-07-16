@@ -41,13 +41,13 @@ class CulturApiApplication:CommandLineRunner{
 				LocalDate.parse("27-11-2020", formatter), LocalDateTime.now(),"img.jpg","1","2")
 
 		eventoRepository!!.save(evento)
-		*/
+
 		val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
 
 		val usuario1 = Usuario("Sebastian", "Castano", "3108238608",
 				"sebas1929castano@gmail.com",LocalDate.parse("29-01-1996", formatter),"hola",
 				"sebas123",2,2)
-		/*
+
 		val estado1 = Estado("ACTIVO")
 		val estado2 = Estado("INACTIVO")
 
