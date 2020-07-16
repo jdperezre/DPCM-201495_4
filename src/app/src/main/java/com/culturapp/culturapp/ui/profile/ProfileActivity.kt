@@ -8,6 +8,7 @@ import com.culturapp.culturapp.R
 import kotlinx.android.synthetic.main.new_event.*
 import kotlinx.android.synthetic.main.profile.*
 import kotlinx.android.synthetic.main.profile_content.*
+import kotlinx.android.synthetic.main.titlebar_events.*
 
 class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +22,14 @@ class ProfileActivity : AppCompatActivity() {
             window.setBackgroundDrawableResource(R.color.backgroundWindow)
         }
 
+        btnBack.setOnClickListener{onBackPressed()}
+
         initControls()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.rigthin, R.anim.rigthout);
     }
 
     private fun initControls() {
