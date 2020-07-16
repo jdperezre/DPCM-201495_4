@@ -45,7 +45,7 @@ class EventsActivity : AppCompatActivity() {
 
         progressProgressDialog = ProgressDialog(this, 0)
         progressProgressDialog.run {
-            setTitle("Cargando")
+            setTitle(getString(R.string.loading))
             setContentView(R.layout.progress)
             setCancelable(false)
             show()
@@ -72,7 +72,7 @@ class EventsActivity : AppCompatActivity() {
                 progressProgressDialog.dismiss()
 
                 if(response!!.body().isNullOrEmpty()){
-                    Toast.makeText(this@EventsActivity, "No se encontraron resultados", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@EventsActivity, getString(R.string.result_not_found), Toast.LENGTH_LONG).show()
                     return
                 }
 

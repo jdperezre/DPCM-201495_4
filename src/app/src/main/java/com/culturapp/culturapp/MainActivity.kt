@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.doTransaction{remove(fragment)}
     }
 
-    //Popup menu
+    /*//Popup menu
     fun menuFavorite(view: View) {
         showPopupMenu(view, R.menu.contextual_menu)
     }
@@ -134,9 +134,9 @@ class MainActivity : AppCompatActivity() {
              true
         }
         popupMenu.show()
-    }
+    }*/
 
-    //Alarms
+    /*//Alarms
 
     lateinit var context: Context
     lateinit var alarmManager: AlarmManager
@@ -197,11 +197,11 @@ class MainActivity : AppCompatActivity() {
         val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         Log.d("MainActivity", " Cancel : " + Date().toString())
         alarmManager.cancel(pendingIntent)
-    }
+    }*/
 }
 
-class Receiver : BroadcastReceiver() {
+/*class Receiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         Log.d("MainActivity", " Receiver : " + Date().toString())
     }
-}
+}*/

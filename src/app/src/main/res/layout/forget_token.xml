@@ -50,7 +50,7 @@
         android:fontFamily="@font/roboto_regular"
         android:orientation="horizontal"
         android:padding="12dp"
-        android:text="Hemos enviado un código de \nseguridad a tu correo electrónico. \nIngresa el código de seguridad"
+        android:text="@string/recovery_password_legend_2"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_anchor="@+id/layoutTitle"

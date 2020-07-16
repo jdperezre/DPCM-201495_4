@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 <!--    menu contextual events-->
     <item
-        android:id="@+id/add_event"
+        android:id="@+id/edit_event"
         android:icon="@drawable/notifications_white_18dp"
         android:title="@string/edit_event"
         app:showAsAction="never"></item>

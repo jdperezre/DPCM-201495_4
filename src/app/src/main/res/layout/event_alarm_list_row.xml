@@ -138,12 +138,11 @@
 
 
     <ImageButton
-        android:id="@+id/imageView4"
+        android:id="@+id/imgMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/layInfo"
         android:background="?attr/selectableItemBackground"
-        android:onClick="menuAlarm"
         android:paddingTop="6dp"
         app:srcCompat="@drawable/ic_contextual_menu" />
 
