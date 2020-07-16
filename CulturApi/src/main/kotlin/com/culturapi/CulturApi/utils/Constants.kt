@@ -32,7 +32,7 @@ class Constants {
         const val USUARIO_INACTIVO = "Usuario inactivo"
 
         //Contraseña Invalida
-        const val CONTRASENA_INVALIDA = "Contraseña invalida"
+        const val CONTRASENA_INVALIDA = "Datos invalidos"
 
         //Contraseña Valida y Usuario Activo
         const val ACCESO_APROBADO = "¡Bienvenido!"

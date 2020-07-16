@@ -9,10 +9,7 @@ import com.culturapi.CulturApi.utils.Constants
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping(Constants.URL_BASE_LOGIN)
@@ -22,8 +19,8 @@ class LoginRestController {
     val loginBusiness: ILoginBusiness? = null
 
     // Obtener respuesta de Logueo
-    @GetMapping("/{login}")
-    fun load(@PathVariable("login") loginRequest: String): ResponseEntity<Any> {
+    @PostMapping("")
+    fun load(@RequestBody loginRequest: LoginRequest): ResponseEntity<Any> {
         return try {
             ResponseEntity(loginBusiness!!.load(loginRequest), HttpStatus.OK)
         } catch (e: BusinessException) {

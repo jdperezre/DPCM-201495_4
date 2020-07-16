@@ -8,10 +8,8 @@ import com.culturapi.CulturApi.model.LoginRequest
 import com.culturapi.CulturApi.model.LoginResponse
 import com.culturapi.CulturApi.model.Usuario
 import com.culturapi.CulturApi.utils.Constants
-import com.google.gson.Gson
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
-import org.springframework.web.bind.annotation.RequestMapping
 import java.util.*
 
 
@@ -22,38 +20,44 @@ class LoginBusiness:ILoginBusiness {
     val usuarioRepository : UsuarioRepository? = null
 
     @Throws(BusinessException::class, NotFoundException::class)
-    override fun load(loginRequest: String): LoginResponse {
+    override fun load(loginRequest: LoginRequest): LoginResponse {
 
-        val gson =  Gson()
         val op: Optional<Usuario>
         val response = LoginResponse()
 
-        val login = gson.fromJson(loginRequest,LoginRequest::class.java)
-
         try {
-            op = usuarioRepository!!.findByEmailIgnoreCase(login.email)
+            op = usuarioRepository!!.findByEmailIgnoreCase(loginRequest.email)
         }catch (e:Exception){
             throw BusinessException(e.message)
         }
 
         if(!op.isPresent){
-            throw NotFoundException("No se encuentra el usuario con este email = ${login.email}")
+            response.result = false
+            response.descripcion = Constants.CONTRASENA_INVALIDA
         }
         else{
 
             response.result = false
-            response.rol = op.get().idRol
-            if(op.get().contrasena != login.contrasena &&
+            if(op.get().contrasena != loginRequest.contrasena &&
                     op.get().idEstado.toInt() == Constants.INACTIVO){
                 response.descripcion = Constants.USUARIO_INACTIVO + " y " + Constants.CONTRASENA_INVALIDA
             }
-            else if(op.get().contrasena != login.contrasena){
+            else if(op.get().contrasena != loginRequest.contrasena){
                 response.descripcion = Constants.CONTRASENA_INVALIDA
             }
             else if(op.get().idEstado.toInt() == Constants.INACTIVO){
                 response.descripcion = Constants.USUARIO_INACTIVO
             }
             else{
+                response.nombre = op.get().nombre
+                response.apellido = op.get().apellido
+                response.celular = op.get().celular
+                response.email = op.get().email
+                response.fecha_nacimiento = op.get().fecha_nacimiento
+                response.imagen = op.get().imagen
+                response.idRol = op.get().idRol
+                response.idEstado = op.get().idEstado
+                response.id = op.get().id
                 response.result = true
                 response.descripcion = Constants.ACCESO_APROBADO
             }
