@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
+import android.view.View
 import android.view.Window
 import com.culturapp.culturapp.R
 import kotlinx.android.synthetic.main.login.*
@@ -40,6 +41,7 @@ class RegisterLoginInfoActivity : AppCompatActivity() {
     }
 
     private fun setupEvents() {
+        txtDescription.setOnClickListener{startTermsActivity()}
         btnNext.setOnClickListener {
             startActivity(Intent(this, RegisterUserInfoActivity::class.java))
             overridePendingTransition(R.anim.leftin, R.anim.leftout)
@@ -57,5 +59,10 @@ class RegisterLoginInfoActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         overridePendingTransition(R.anim.rigthin, R.anim.rigthout);
+    }
+
+    fun startTermsActivity() {
+        startActivity(Intent(this, TermsConditionsActivity::class.java))
+        overridePendingTransition(R.anim.leftin, R.anim.leftout)
     }
 }
