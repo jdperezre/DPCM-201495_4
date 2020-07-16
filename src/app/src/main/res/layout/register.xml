@@ -85,18 +85,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
-    <com.google.android.material.checkbox.MaterialCheckBox
-        android:id="@+id/checkTerminosCondiciones"
-        android:layout_width="300dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:fontFamily="@font/roboto_regular"
-        android:text="@string/terminos_y_condiciones"
-        android:textColor="@color/white"
-        android:textSize="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="357dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextConfirm"></com.google.android.material.checkbox.MaterialCheckBox>
+        app:layout_constraintTop_toBottomOf="@+id/editTextConfirm">
+
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkTerminosCondiciones"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:clickable="true"
+            android:fontFamily="@font/roboto_regular"
+            android:onClick="onClick"
+            android:text="@string/terminos_y_condiciones"
+            android:textColor="@color/white"
+            android:textSize="16dp"></com.google.android.material.checkbox.MaterialCheckBox>
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="241dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/muli"
+            android:text="@string/terminos_y_condiciones2"
+            android:textColor="@color/yellowText"
+            android:textSize="16dp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnNext"

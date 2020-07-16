@@ -60,7 +60,9 @@
     <string name="hint_apellidos">Apellidos</string>
     <string name="hint_celular">Número celular</string>
     <string name="hint_fecha_nacimiento">Fecha de nacimiento</string>
-    <string name="terminos_y_condiciones">He leído y acepto los \nTérminos y condiciones</string>
+    <string name="terminos_y_condiciones">He leído y acepto los</string>
+    <string name="terminos_y_condiciones2">Términos y condiciones</string>
+    <string name="terminos_y_condiciones3">El usuario se compromete a leer los términos y condiciones aquí establecidas, previamente a la descarga de la aplicación, por tanto, en caso de realizar la instalación se entiende que cuenta con el conocimiento integral de este documento y la consecuente aceptación de la totalidad de sus estipulaciones.El Usuario reconoce que el ingreso de su información personal, y los datos que contiene la aplicación a su disposición respecto a los productos activos de la Universidad, la realizan de manera voluntaria, quienes optan por acceder a esta aplicación en Colombia o desde fuera del territorio nacional, lo hacen por iniciativa propia y son responsables del cumplimiento de las leyes locales, en la medida en que dichas leyes sean aplicables en su correspondiente país. En caso de que se acceda por parte de menores de edad, deben contar con la supervisión de un adulto en todo momento desde la descarga y durante el uso de la aplicación, en el evento en que no se cumpla esta condición, le agradecemos no hacer uso de la aplicación.</string>
     <string name="ya_tienes_cuenta">¿Ya tienes una cuenta? \n Inicia sesión</string>
     <string name="finalizar">Finalizar</string>
     <string name="hint_codigo">Código</string>
@@ -79,4 +81,10 @@
     <string name="hint_password">Perfil</string>
     <string name="hint_state">Activo</string>
 
+    <!--    terms and conditions -->
+    <string name="title_terms">Términos y condiciones</string>
+    <string name="text_terms">En este documento se establecen los Términos y Condiciones que regulan el uso de la aplicación móvil de la Universidad Nacional Abierta y a Distancia titulada CulturApp.</string>
+    <string name="text_terms2">
+        Al acceder a la aplicación y explorar el contenido del mismo, Usted acepta, sin reserva
+        ni limitación alguna, los presentes términos y condiciones.</string>
 </resources>

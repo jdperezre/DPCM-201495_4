@@ -52,6 +52,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ui.login.TermsConditionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
     </application>
