@@ -55,7 +55,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="200dp"
         android:fontFamily="@font/muli"
-        android:text="¡Están sucediendo muchas cosas a tu alrededor! ¡Nuestra misión es proporcionar los Eventos que suceden en la ciudad!"
+        android:text="@string/splash_description"
         android:textColor="@color/white"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"

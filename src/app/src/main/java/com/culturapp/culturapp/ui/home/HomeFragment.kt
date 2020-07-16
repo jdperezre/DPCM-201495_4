@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
 
         progressProgressDialog = ProgressDialog(this.requireContext(), 0)
         progressProgressDialog.run {
-            setTitle("Cargando")
+            setTitle(getString(R.string.loading))
             setContentView(R.layout.progress)
             setCancelable(false)
             show()
@@ -55,7 +55,7 @@ class HomeFragment : Fragment() {
                 progressProgressDialog.dismiss()
 
                 if(response!!.body().isNullOrEmpty()){
-                    Toast.makeText(this@HomeFragment.requireActivity(), "No se encontraron resultados", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@HomeFragment.requireActivity(), getString(R.string.result_not_found), Toast.LENGTH_LONG).show()
                     return
                 }
 

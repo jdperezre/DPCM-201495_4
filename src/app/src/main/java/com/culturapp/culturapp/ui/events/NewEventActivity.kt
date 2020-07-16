@@ -15,12 +15,9 @@ import android.util.Log
 import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
 import com.culturapp.culturapp.R
-import com.culturapp.culturapp.adapters.EventListAdapter
 import com.culturapp.culturapp.api.ApiClient
 import com.culturapp.culturapp.models.Event
-import kotlinx.android.synthetic.main.events.*
 import kotlinx.android.synthetic.main.new_event.*
 import kotlinx.android.synthetic.main.titlebar_events.*
 import retrofit2.Call
@@ -61,7 +58,7 @@ class NewEventActivity : AppCompatActivity() {
 
             progressProgressDialog = ProgressDialog(this, 0)
             progressProgressDialog.run {
-                setTitle("Cargando")
+                setTitle(getString(R.string.loading))
                 setContentView(R.layout.progress)
                 setCancelable(false)
                 show()
@@ -123,13 +120,13 @@ class NewEventActivity : AppCompatActivity() {
             override fun onResponse(call: Call<String>, response: Response<String>) {
                 if(response.isSuccessful) {
                     progressProgressDialog.hide()
-                    Toast.makeText(this@NewEventActivity, "Evento guardado", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@NewEventActivity, getString(R.string.event_saved), Toast.LENGTH_SHORT).show()
                     onBackPressed()
                 }
                 else{
                     progressProgressDialog.hide()
                     Log.d("Error Service", response.errorBody()?.string())
-                    Toast.makeText(this@NewEventActivity, "Ha ocurrido un error inesperado", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@NewEventActivity, getString(R.string.unexpected_error), Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -137,10 +134,10 @@ class NewEventActivity : AppCompatActivity() {
                 progressProgressDialog.hide()
 
                 if(!call.isCanceled && call.isExecuted){
-                    Toast.makeText(this@NewEventActivity, "Evento guardado", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@NewEventActivity, getString(R.string.event_saved), Toast.LENGTH_SHORT).show()
                     onBackPressed()
                 }else{
-                    Toast.makeText(this@NewEventActivity, "Ha ocurrido un error inesperado. Inténtalo mas tarde", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@NewEventActivity, getString(R.string.unexpected_error), Toast.LENGTH_SHORT).show()
                 }
 
 
@@ -194,7 +191,7 @@ class NewEventActivity : AppCompatActivity() {
                 }
                 else
                 {
-                    Toast.makeText(this, "Permiso denegado", Toast.LENGTH_SHORT)
+                    Toast.makeText(this, getString(R.string.permission_denied), Toast.LENGTH_SHORT)
                 }
             }
         }

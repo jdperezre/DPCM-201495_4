@@ -36,7 +36,7 @@ class NotificationsFragment : Fragment() {
 
         progressProgressDialog = ProgressDialog(this.requireContext(), 0)
         progressProgressDialog.run {
-            setTitle("Cargando")
+            setTitle(getString(R.string.loading))
             setContentView(R.layout.progress)
             setCancelable(false)
             show()
@@ -53,7 +53,7 @@ class NotificationsFragment : Fragment() {
                 progressProgressDialog.dismiss()
 
                 if(response!!.body().isNullOrEmpty()){
-                    Toast.makeText(this@NotificationsFragment.requireActivity(), "No se encontraron resultados", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@NotificationsFragment.requireActivity(), getString(R.string.result_not_found), Toast.LENGTH_LONG).show()
                     return
                 }
 

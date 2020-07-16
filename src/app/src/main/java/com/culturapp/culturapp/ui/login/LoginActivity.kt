@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
+import android.view.View
 import android.view.Window
 import com.culturapp.culturapp.R
 import com.culturapp.culturapp.api.ApiClient
@@ -30,12 +31,11 @@ class LoginActivity : AppCompatActivity() {
             window.setBackgroundDrawableResource(R.color.backgroundWindow)
         }
 
-
         initControls()
         setupEvents()
 
         //TODO: Mostrar cuando se implemente la funcionalidad
-        //btnGoogle.visibility = View.GONE
+        btnGoogle.visibility = View.GONE
     }
 
     override fun onBackPressed() {
@@ -76,9 +76,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login(){
-        //var data: String = ('{"email":"Juanperz211@gmail.com","contrasena":"Juan123**"}').toString()
-
-
 
         var data = JSONObject("""{"email":"Juanperz211@gmail.com","contrasena":"Juan123**"}""")
 

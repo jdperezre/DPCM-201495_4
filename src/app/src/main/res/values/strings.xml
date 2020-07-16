@@ -78,5 +78,18 @@
     <string name="hint_birth_date">DD/MM/YYYY</string>
     <string name="hint_password">Perfil</string>
     <string name="hint_state">Activo</string>
+    <string name="mi_perfil">Mi perfil</string>
+    <string name="administrar_eventos">Administrar Eventos</string>
+    <string name="logout">Cerrar Sesión</string>
+    <string name="splash_description">¡Están sucediendo muchas cosas a tu alrededor! ¡Nuestra misión es proporcionar los Eventos que suceden en la ciudad!</string>
+    <string name="loading">Cargando</string>
+    <string name="result_not_found">No se encontraron resultados</string>
+    <string name="event_saved">Evento guardado</string>
+    <string name="unexpected_error">Ha ocurrido un error inesperado</string>
+    <string name="permission_denied">Permiso denegado</string>
+    <string name="recovery_password_legend">Para finalizar crea una nueva \ncontraseña de acceso. \n</string>
+    <string name="recovery_password_legend_2">Hemos enviado un código de \nseguridad a tu correo electrónico. \nIngresa el código de seguridad</string>
+    <string name="register_legend">Ingresa la información \npersonal</string>
+    <string name="menu">Menu</string>
 
 </resources>
