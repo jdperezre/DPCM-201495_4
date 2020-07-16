@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
 
         Handler().postDelayed({
             NextScreen()
-        }, 5000)
+        }, 10000)
 
     }
 
