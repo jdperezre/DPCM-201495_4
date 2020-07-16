@@ -87,9 +87,6 @@ class EventListAdapter(private var activity: Activity, private var items: List<E
         popupMenu.show()
     }
 
-
-
-    lateinit var context: Context
     lateinit var alarmManager: AlarmManager
 
 
@@ -102,10 +99,8 @@ class EventListAdapter(private var activity: Activity, private var items: List<E
         val hour = c.get(Calendar.HOUR)
         val minute = c.get(Calendar.MINUTE)
 
-        this.context = activity;
-
-        val dpdDate = DatePickerDialog(this.context,  DatePickerDialog.OnDateSetListener{ view, mYear, mMonth, mDay->
-            val dpdHour = TimePickerDialog(this.context,  TimePickerDialog.OnTimeSetListener{ view, mHour, mMinute->
+        val dpdDate = DatePickerDialog(this.activity,  DatePickerDialog.OnDateSetListener{ view, mYear, mMonth, mDay->
+            val dpdHour = TimePickerDialog(this.activity,  TimePickerDialog.OnTimeSetListener{ view, mHour, mMinute->
                 val calendar: Calendar = GregorianCalendar(
                     mYear,
                     mMonth,
@@ -125,25 +120,25 @@ class EventListAdapter(private var activity: Activity, private var items: List<E
 
 
     public fun createAlarm(milliseconds: Long){
-        //alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val intent = Intent(context, Receiver::class.java)
-        val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        alarmManager = activity.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(activity, Receiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(activity, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         Log.d("MainActivity", " Create : " + Date().toString())
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + milliseconds, pendingIntent)
     }
 
     public fun updateAlarm(milliseconds: Long){
-        //alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val intent = Intent(context, Receiver::class.java)
-        val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        alarmManager = activity.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(activity, Receiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(activity, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         Log.d("MainActivity", " Update : " + Date().toString())
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + milliseconds, pendingIntent)
     }
 
     public fun cancelAlarm(){
-        //alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val intent = Intent(context, Receiver::class.java)
-        val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        alarmManager = activity.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(activity, Receiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(activity, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         Log.d("MainActivity", " Cancel : " + Date().toString())
         alarmManager.cancel(pendingIntent)
     }

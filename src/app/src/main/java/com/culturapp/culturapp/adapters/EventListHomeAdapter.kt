@@ -5,8 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
+import com.culturapp.culturapp.MainActivity
 import com.culturapp.culturapp.R
 import com.culturapp.culturapp.models.Event
 
@@ -16,11 +19,13 @@ class EventListHomeAdapter(private var activity: FragmentActivity, private var i
         var txtTitle: TextView? = null
         var txtDate: TextView? = null
         var txtLocation: TextView? = null
+        var event_dash_list: RelativeLayout? = null
 
         init {
             this.txtTitle = row?.findViewById<TextView>(R.id.txtTitle)
             this.txtDate = row?.findViewById<TextView>(R.id.txtDate)
             this.txtLocation = row?.findViewById<TextView>(R.id.txtLocation)
+            this.event_dash_list = row?.findViewById<RelativeLayout>(R.id.event_dash_list)
         }
     }
 
@@ -41,6 +46,10 @@ class EventListHomeAdapter(private var activity: FragmentActivity, private var i
         viewHolder.txtTitle?.text = eventDto.titulo
         viewHolder.txtDate?.text = eventDto.fechaInicio
         viewHolder.txtLocation?.text = eventDto.direccion
+
+        viewHolder.event_dash_list?.setOnClickListener {
+            (activity as MainActivity).goToDetalEvent(eventDto)
+        }
 
         return view as View
     }

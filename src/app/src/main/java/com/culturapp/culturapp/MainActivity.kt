@@ -1,34 +1,26 @@
 package com.culturapp.culturapp
 
-import android.app.AlarmManager
-import android.app.DatePickerDialog
-import android.app.PendingIntent
-import android.app.TimePickerDialog
-import android.content.BroadcastReceiver
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.view.Window
 import android.widget.ImageView
-import android.widget.PopupMenu
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.culturapp.culturapp.models.Event
 import com.culturapp.culturapp.ui.favorites.FavoritesFragment
+import com.culturapp.culturapp.ui.home.DetailFragment
 import com.culturapp.culturapp.ui.home.HomeFragment
 import com.culturapp.culturapp.ui.notifications.NotificationsFragment
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.titlebar.*
-import java.io.File
-import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
+
+    var isDetail: Boolean = false
+    var detailFragment: DetailFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +56,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
+    override fun onBackPressed() {
+        if(isDetail) {
+            removeFragment(detailFragment!!)
+            isDetail = false
+        }
+        else {
+            super.onBackPressed()
+        }
+    }
 
     private fun showLateralMenu(){
         startActivity(Intent(this, LateralMenuActivity::class.java))
@@ -100,6 +100,13 @@ class MainActivity : AppCompatActivity() {
     fun AppCompatActivity.removeFragment(fragment: Fragment) {
         supportFragmentManager.doTransaction{remove(fragment)}
     }
+
+    public fun goToDetalEvent(eventDto: Event){
+        detailFragment = DetailFragment(eventDto)
+        isDetail = true
+        addFragment(detailFragment!!)
+    }
+
 
     /*//Popup menu
     fun menuFavorite(view: View) {

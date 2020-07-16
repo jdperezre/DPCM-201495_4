@@ -9,8 +9,12 @@
     android:padding="25dp"
     tools:context=".MainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_detail_event"
         android:gravity="center"
@@ -20,6 +24,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp">
+
+            <!--Img event-->
+            <ImageView
+                android:id="@+id/imgEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/imag"
+                android:scaleType="fitXY" />
 
             <!--Category event-->
             <RelativeLayout
@@ -53,31 +65,24 @@
                     android:typeface="normal" />
             </RelativeLayout>
 
-            <!--Img event-->
-            <ImageView
-                android:id="@+id/imgEvent"
-                android:layout_width="400dp"
-                android:layout_height="182dp"
-                android:layout_gravity="center"
-                android:padding="15dp"
-                android:src="@drawable/imag" />
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/shape_black"
+                android:fontFamily="@font/muli_bold"
+                android:gravity="right"
+                android:padding="5dp"
+                android:text="Partido Copa Libertadores Ind. Antioquia vs River Junios"
+                android:textAlignment="gravity"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:typeface="normal" />
         </RelativeLayout>
 
         <!--Title event-->
-        <TextView
-            android:id="@+id/txtTitle"
-            android:layout_width="315dp"
-            android:layout_height="67dp"
-            android:background="@drawable/shape_black"
-            android:fontFamily="@font/muli_bold"
-            android:gravity="right"
-            android:padding="5dp"
-            android:text="Partido Copa Libertadores Ind. Antioquia vs River Junios"
-            android:textAlignment="gravity"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:typeface="normal" />
 
         <!--Date-->
         <LinearLayout
@@ -153,7 +158,7 @@
             android:scrollbarAlwaysDrawVerticalTrack="true">
 
             <TextView
-                android:id="@+id/textRegister"
+                android:id="@+id/textDescription"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -282,5 +287,6 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+    </ScrollView>
 </RelativeLayout>
 
