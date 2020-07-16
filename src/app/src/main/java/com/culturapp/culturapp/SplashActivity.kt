@@ -14,8 +14,7 @@ class SplashActivity : AppCompatActivity() {
 
         Handler().postDelayed({
             NextScreen()
-        }, 10000)
-
+        }, 5000)
     }
 
     override fun onResume() {

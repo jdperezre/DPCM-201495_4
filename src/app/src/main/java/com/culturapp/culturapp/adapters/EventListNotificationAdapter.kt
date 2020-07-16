@@ -4,8 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.FragmentActivity
 import com.culturapp.culturapp.R
 import com.culturapp.culturapp.models.Event
@@ -18,6 +17,7 @@ class EventListNotificationAdapter(private var activity: FragmentActivity, priva
         var txtDateAlarm: TextView? = null
         var txtHour: TextView? = null
         var txtLocation: TextView? = null
+        var imgMenu : ImageView? = null
 
         init {
             this.txtTitle = row?.findViewById<TextView>(R.id.txtTitle)
@@ -25,6 +25,7 @@ class EventListNotificationAdapter(private var activity: FragmentActivity, priva
             this.txtDateAlarm = row?.findViewById<TextView>(R.id.txtAlarmDate)
             this.txtHour = row?.findViewById<TextView>(R.id.txtAlarmHour)
             this.txtLocation = row?.findViewById<TextView>(R.id.txtLocation)
+            this.imgMenu = row?.findViewById<ImageView>(R.id.imgMenu)
         }
     }
 
@@ -48,6 +49,10 @@ class EventListNotificationAdapter(private var activity: FragmentActivity, priva
         viewHolder.txtHour?.text = eventDto.hora
         viewHolder.txtLocation?.text = eventDto.direccion
 
+        viewHolder.imgMenu?.setOnClickListener {
+            showPopupMenuAlarm(it, R.menu.contextual_alarm_menu, eventDto.id)
+        }
+
         return view as View
     }
 
@@ -61,5 +66,18 @@ class EventListNotificationAdapter(private var activity: FragmentActivity, priva
 
     override fun getCount(): Int {
         return items.size
+    }
+
+    private fun showPopupMenuAlarm(view: View, menu: Int, id: Int) {
+        val popupMenu = PopupMenu(activity, view)
+        popupMenu.menuInflater.inflate(menu, popupMenu.menu)
+        popupMenu.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.edit_alarm -> Toast.makeText(activity, "Alarma editada", Toast.LENGTH_SHORT).show()
+                R.id.delete_alarm -> Toast.makeText(activity, "Alarma eliminada", Toast.LENGTH_SHORT).show()
+            }
+            true
+        }
+        popupMenu.show()
     }
 }
