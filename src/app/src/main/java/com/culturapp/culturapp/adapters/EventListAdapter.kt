@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentActivity
 import com.culturapp.culturapp.R
 import com.culturapp.culturapp.models.Event
 import com.culturapp.culturapp.ui.events.EventsActivity
+import com.culturapp.culturapp.ui.events.NewEventActivity
 import java.util.*
 
 class EventListAdapter(private var activity: Activity, private var items: List<Event>): BaseAdapter() {
@@ -78,9 +79,14 @@ class EventListAdapter(private var activity: Activity, private var items: List<E
         popupMenu.setOnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.add_alarm -> showCalendarAlarm()
-                R.id.delete_favorite -> Toast.makeText(activity, "Favorito eliminado", Toast.LENGTH_SHORT).show()
+                R.id.delete_favorite -> {
+                    Toast.makeText(activity, "Favorito eliminado", Toast.LENGTH_SHORT).show()
+                }
                 R.id.edit_event -> Toast.makeText(activity, "Evento editado", Toast.LENGTH_SHORT).show()
-                R.id.delete_event -> Toast.makeText(activity, "Evento eliminado", Toast.LENGTH_SHORT).show()
+                R.id.delete_event ->{
+                    (activity as EventsActivity).getData()
+                    Toast.makeText(activity, "Evento eliminado", Toast.LENGTH_SHORT).show()
+                }
             }
             true
         }

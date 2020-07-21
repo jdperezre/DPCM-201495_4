@@ -43,13 +43,7 @@ class EventsActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        progressProgressDialog = ProgressDialog(this, 0)
-        progressProgressDialog.run {
-            setTitle(getString(R.string.loading))
-            setContentView(R.layout.progress)
-            setCancelable(false)
-            show()
-        }
+
         getData()
     }
 
@@ -64,7 +58,16 @@ class EventsActivity : AppCompatActivity() {
     }
 
 
-    private fun getData() {
+    fun getData() {
+
+        progressProgressDialog = ProgressDialog(this, 0)
+        progressProgressDialog.run {
+            setTitle(getString(R.string.loading))
+            setContentView(R.layout.progress)
+            setCancelable(false)
+            show()
+        }
+
         val call: Call<List<Event>> = ApiClient.getClient.getEvents()
         call.enqueue(object : Callback<List<Event>> {
 
